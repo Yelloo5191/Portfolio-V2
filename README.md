@@ -10,7 +10,7 @@ Hot new portfolio
 
 MIT License
 
-Copyright (c) 2021 Hazim Arafa
+Copyright (c) 2021 Yelloo5191
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
