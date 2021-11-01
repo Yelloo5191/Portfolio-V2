@@ -1,32 +1,27 @@
-import { Heading, HStack } from "@chakra-ui/react";
-import NextChakraLink from "@components/nextChakraLink";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Heading, HStack, Link, StackDivider } from "@chakra-ui/react";
 
 // eslint-disable-next-line import/no-default-export
 export default function Main(): JSX.Element {
 	return (
 		<HStack
-			borderTop="5px #5cfff1 solid"
 			justify="space-between"
-			bg="#1a202c"
+			bg="brand.secondary"
 			px="50px"
 			py="10px"
 			as="header"
+			top="0"
+			pos="sticky"
 		>
-			<Heading>NextJS Boilerplate</Heading>
-			<HStack justify="center" align="center">
-				<NextChakraLink
-					href="https://github.com/HazimAr/"
-					aria-label="Github"
-				>
-					<FaGithub size="30px" />
-				</NextChakraLink>
-				<NextChakraLink
-					href="https://www.linkedin.com/in/hazim-arafa-a439aa205/"
-					aria-label="LinkedIn"
-				>
-					<FaLinkedin size="30px" />
-				</NextChakraLink>
+			<Heading>Yelloo</Heading>
+			<HStack 
+				divider={<StackDivider borderColor="gray.200" />} 
+				px="50px" 
+				align="center"
+				spacing={4}
+			>
+				<Link>Home</Link>
+				<Link>Projects</Link>
+				<Link>Contact</Link>
 			</HStack>
 		</HStack>
 	);
