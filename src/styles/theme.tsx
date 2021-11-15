@@ -6,17 +6,18 @@ const theme = extendTheme({
 		brand: {
 			secondary: "#03071E",
 			primary: "#FFBA08",
-			gradient: "linear-gradient(to top, rgba(232, 93, 4, 1) 0%, rgba(250, 163, 7, 1) 100%)",
+			gradient:
+				"linear-gradient(to bottom, rgba(232, 93, 4, 1) 0%, rgba(250, 163, 7, 1) 100%)",
+			transparent: "rgba(3,7,30,0.3)",
 		},
 	},
 	components: {
 		Heading: {
 			baseStyle: {
-				fontFamily:
-					"montserrat",
+				fontFamily: "montserrat",
 				fontWeight: "light",
 				color: "brand.primary",
-			  },
+			},
 		},
 	},
 	styles: {
@@ -25,8 +26,7 @@ const theme = extendTheme({
 				height: "100%",
 			},
 			body: {
-				fontFamily:
-					"montserrat",
+				fontFamily: "montserrat",
 				color: "white",
 				lineHeight: "base",
 				padding: 0,

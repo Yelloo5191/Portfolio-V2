@@ -5,7 +5,8 @@ export default function Main(): JSX.Element {
 	return (
 		<HStack
 			justify="space-between"
-			bg="brand.secondary"
+			bg="brand.transparent"
+			backdropFilter="blur(12px)"
 			px="50px"
 			py="10px"
 			as="header"
@@ -13,9 +14,9 @@ export default function Main(): JSX.Element {
 			pos="sticky"
 		>
 			<Heading>Yelloo</Heading>
-			<HStack 
-				divider={<StackDivider borderColor="gray.200" />} 
-				px="50px" 
+			<HStack
+				divider={<StackDivider borderColor="gray.200" />}
+				px="50px"
 				align="center"
 				spacing={4}
 			>
