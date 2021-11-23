@@ -22,7 +22,9 @@ export default function Panel({
 					position="relative"
 					transition="all 0.3s ease-in-out"
 					cursor="pointer"
+					filter="brightness(75%)"
 					_hover={{
+						filter: "brightness(100%)",
 						boxShadow: "0px 0px 10px rgba(255,255,255,0.5)",
 						top: "-8px",
 					}}

@@ -3,7 +3,7 @@ import Panel from "./panel";
 
 export default function Projects(): JSX.Element {
 	return (
-		<VStack>
+		<VStack id="projects">
 			<Heading fontSize="75px">Projects</Heading>
 
 			<SimpleGrid columns={2} spacing={8}>
@@ -26,28 +26,28 @@ const projects = [
 		id: 1,
 		title: "School Simplified",
 		desc: "Frontend Developer",
-		image: "projects/python101.png",
+		image: "projects/school.png",
 		link: "https://schoolsimplified.org/",
 	},
 	{
 		id: 2,
 		title: "Programming Simplified",
 		desc: "Frontend Developer",
-		image: "projects/python101.png",
+		image: "projects/programming.png",
 		link: "https://programming.schoolsimplified.org/",
 	},
 	{
 		id: 3,
-		title: "Game",
-		desc: "good game yes",
-		image: "projects/python101.png",
-		link: "/",
+		title: "Ares",
+		desc: "Solo Developer",
+		image: "projects/ares.png",
+		link: "https://github.com/Yelloo5191/Ares-Bot",
 	},
 	{
 		id: 4,
-		title: "Game",
-		desc: "good game yes",
-		image: "projects/python101.png",
-		link: "/",
+		title: "Learner Projects",
+		desc: "Various Mini-Python Projects",
+		image: "projects/learner.png",
+		link: "https://github.com/Yelloo5191/Learner-Projects",
 	},
 ];

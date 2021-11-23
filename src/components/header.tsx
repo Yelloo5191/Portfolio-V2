@@ -21,8 +21,8 @@ export default function Main(): JSX.Element {
 				align="center"
 				spacing={4}
 			>
-				<Link>Home</Link>
-				<Link>Projects</Link>
+				<Link href="#intro">Home</Link>
+				<Link href="#projects">Projects</Link>
 				<Link>Contact</Link>
 			</HStack>
 		</HStack>
