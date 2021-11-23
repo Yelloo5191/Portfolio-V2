@@ -1,47 +1,53 @@
-import { Flex, Center, Heading } from "@chakra-ui/react";
+import { SimpleGrid, VStack, Heading } from "@chakra-ui/react";
 import Panel from "./panel";
 
 export default function Projects(): JSX.Element {
 	return (
-		<>
-			<Center>
-				<Heading fontSize="75px">Projects</Heading>
-			</Center>
+		<VStack>
+			<Heading fontSize="75px">Projects</Heading>
 
-			<Center>
-				<Flex justify="space-between" padding="5px" flexWrap="wrap">
-					{projects?.map((project) => (
-						<Panel
-							title={project.title}
-							desc={project.desc}
-							image={project.image}
-						/>
-					))}
-				</Flex>
-			</Center>
-		</>
+			<SimpleGrid columns={2} spacing={8}>
+				{projects?.map((project) => (
+					<Panel
+						key={project.id}
+						title={project.title}
+						desc={project.desc}
+						image={project.image}
+						link={project.link}
+					/>
+				))}
+			</SimpleGrid>
+		</VStack>
 	);
 }
 
 const projects = [
 	{
+		id: 1,
 		title: "School Simplified",
 		desc: "Frontend Developer",
-		image: "python101.png",
+		image: "projects/python101.png",
+		link: "https://schoolsimplified.org/",
 	},
 	{
+		id: 2,
 		title: "Programming Simplified",
 		desc: "Frontend Developer",
-		image: "python101.png",
+		image: "projects/python101.png",
+		link: "https://programming.schoolsimplified.org/",
 	},
 	{
+		id: 3,
 		title: "Game",
 		desc: "good game yes",
-		image: "python101.png",
+		image: "projects/python101.png",
+		link: "/",
 	},
 	{
+		id: 4,
 		title: "Game",
 		desc: "good game yes",
-		image: "python101.png",
+		image: "projects/python101.png",
+		link: "/",
 	},
 ];

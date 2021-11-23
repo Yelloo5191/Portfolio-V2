@@ -6,6 +6,7 @@ const theme = extendTheme({
 		brand: {
 			secondary: "#03071E",
 			primary: "#FFBA08",
+			accent: "#370617",
 			gradient:
 				"linear-gradient(to bottom, rgba(232, 93, 4, 1) 0%, rgba(250, 163, 7, 1) 100%)",
 			transparent: "rgba(3,7,30,0.3)",
@@ -24,6 +25,7 @@ const theme = extendTheme({
 		global: () => ({
 			html: {
 				height: "100%",
+				scrollBehavior: "smooth",
 			},
 			body: {
 				fontFamily: "montserrat",

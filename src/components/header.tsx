@@ -12,6 +12,7 @@ export default function Main(): JSX.Element {
 			as="header"
 			top="0"
 			pos="sticky"
+			boxShadow="0px 10px 30px rgba(3,7,30,0.6)"
 		>
 			<Heading>Yelloo</Heading>
 			<HStack
