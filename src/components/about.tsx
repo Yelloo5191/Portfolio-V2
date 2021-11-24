@@ -26,7 +26,7 @@ export default function About(): JSX.Element {
 	};
 
 	return (
-		<>
+		<div>
 			<a
 				id="aboutme"
 				style={{
@@ -39,7 +39,7 @@ export default function About(): JSX.Element {
 				}}
 			></a>
 
-			<VStack w="100%" bg="brand.accent" py="25px" mb="25em">
+			<VStack minW="100%" bg="brand.accent" p="25px" mb="25em">
 				<motion.div
 					initial="initial"
 					animate="animate"
@@ -83,6 +83,6 @@ export default function About(): JSX.Element {
 					</HStack>
 				</motion.div>
 			</VStack>
-		</>
+		</div>
 	);
 }

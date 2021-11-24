@@ -25,7 +25,6 @@ export default function Intro(): JSX.Element {
 			},
 		},
 	};
-
 	return (
 		<motion.div
 			initial="initial"
@@ -34,7 +33,7 @@ export default function Intro(): JSX.Element {
 			variants={fadeInLeft}
 		>
 			<Center id="intro">
-				<VStack my="50px" h="75em" align="start" w="50%" px={50}>
+				<VStack my="50px" minH="100vh" align="start">
 					<Heading fontSize="75px">Greetings,</Heading>
 					<HStack>
 						<Heading color="#FFDDB5" fontSize="52px">
@@ -45,7 +44,7 @@ export default function Intro(): JSX.Element {
 									color: "var(--chakra-colors-brand-primary)",
 								}}
 							>
-								Hovhannes M
+								Hovhannes M.
 							</span>
 						</Heading>
 					</HStack>
