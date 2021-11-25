@@ -1,8 +1,8 @@
 import { Box, VStack, HStack, Heading, Link, Image } from "@chakra-ui/react";
 import Button from "@components/button";
-import NextChakraLink from "./nextChakraLink";
-import { GoMarkGithub } from "react-icons/go";
-import { HiOutlineMail } from "react-icons/hi";
+// import NextChakraLink from "./nextChakraLink";
+// import { GoMarkGithub } from "react-icons/go";
+// import { HiOutlineMail } from "react-icons/hi";
 import { motion } from "framer-motion";
 
 export default function Intro(): JSX.Element {

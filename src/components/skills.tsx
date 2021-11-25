@@ -9,7 +9,7 @@ import {
 	ListIcon,
 } from "@chakra-ui/react";
 import { HiOutlineFastForward } from "react-icons/hi";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 export default function Skills(): JSX.Element {
 	return (
@@ -17,10 +17,10 @@ export default function Skills(): JSX.Element {
 			<VStack mr="50px" w="100%">
 				<Box w="100%" minH="50vh" bg="brand.glossy" borderRadius="15px">
 					<List spacing={5} p="15px">
-						<ListItem color="brand.accent" size="54px">
+						<ListItem color="brand.transparent" size="90px">
 							<ListIcon
 								as={HiOutlineFastForward}
-								color="brand.primary"
+								color="brand.accent"
 							/>
 							Python
 						</ListItem>

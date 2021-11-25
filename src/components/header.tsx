@@ -1,4 +1,4 @@
-import { Image, HStack, Link, StackDivider } from "@chakra-ui/react";
+import { Image, HStack, StackDivider } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 // eslint-disable-next-line import/no-default-export
