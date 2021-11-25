@@ -66,6 +66,7 @@ export default function Skills(): JSX.Element {
 								<ListItem
 									color="brand.transparent"
 									fontSize="20px"
+									fontWeight="bold"
 								>
 									<ListIcon
 										as={HiOutlineFastForward}
@@ -76,6 +77,7 @@ export default function Skills(): JSX.Element {
 								<ListItem
 									color="brand.transparent"
 									fontSize="20px"
+									fontWeight="bold"
 								>
 									<ListIcon
 										as={HiOutlineFastForward}
@@ -86,6 +88,7 @@ export default function Skills(): JSX.Element {
 								<ListItem
 									color="brand.transparent"
 									fontSize="20px"
+									fontWeight="bold"
 								>
 									<ListIcon
 										as={HiOutlineFastForward}
@@ -96,6 +99,7 @@ export default function Skills(): JSX.Element {
 								<ListItem
 									color="brand.transparent"
 									fontSize="20px"
+									fontWeight="bold"
 								>
 									<ListIcon
 										as={HiOutlineFastForward}
@@ -106,6 +110,7 @@ export default function Skills(): JSX.Element {
 								<ListItem
 									color="brand.transparent"
 									fontSize="20px"
+									fontWeight="bold"
 								>
 									<ListIcon
 										as={HiOutlineFastForward}
@@ -116,6 +121,7 @@ export default function Skills(): JSX.Element {
 								<ListItem
 									color="brand.transparent"
 									fontSize="20px"
+									fontWeight="bold"
 								>
 									<ListIcon
 										as={HiOutlineFastForward}
@@ -126,6 +132,7 @@ export default function Skills(): JSX.Element {
 								<ListItem
 									color="brand.transparent"
 									fontSize="20px"
+									fontWeight="bold"
 								>
 									<ListIcon
 										as={HiOutlineFastForward}
@@ -136,6 +143,7 @@ export default function Skills(): JSX.Element {
 								<ListItem
 									color="brand.transparent"
 									fontSize="20px"
+									fontWeight="bold"
 								>
 									<ListIcon
 										as={HiOutlineFastForward}
@@ -146,6 +154,7 @@ export default function Skills(): JSX.Element {
 								<ListItem
 									color="brand.transparent"
 									fontSize="20px"
+									fontWeight="bold"
 								>
 									<ListIcon
 										as={HiOutlineFastForward}
@@ -156,6 +165,7 @@ export default function Skills(): JSX.Element {
 								<ListItem
 									color="brand.transparent"
 									fontSize="20px"
+									fontWeight="bold"
 								>
 									<ListIcon
 										as={HiOutlineFastForward}
