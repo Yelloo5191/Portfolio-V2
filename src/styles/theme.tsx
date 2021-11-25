@@ -4,11 +4,14 @@ import { extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({
 	colors: {
 		brand: {
-			secondary: "#03071E",
+			secondary:
+				"linear-gradient(to bottom right, rgba(34, 37, 51, 1) 0%, rgba(0, 0, 0, 1) 100%)",
 			primary: "#FFBA08",
+			light: "#FFDDB5",
 			accent: "#370617",
+			glossy: "linear-gradient(to top left, rgba(255, 245, 220, 0.5) 0%, rgba(255, 221, 181, 1) 100%)",
 			gradient:
-				"linear-gradient(to bottom, rgba(232, 93, 4, 1) 0%, rgba(250, 163, 7, 1) 100%)",
+				"linear-gradient(to bottom, rgba(255, 186, 8, 1) 0%, rgba(255, 221, 181, 1) 100%)",
 			transparent: "rgba(3,7,30,0.3)",
 		},
 	},
@@ -24,7 +27,6 @@ const theme = extendTheme({
 	styles: {
 		global: () => ({
 			html: {
-				minH: "100%",
 				scrollBehavior: "smooth",
 			},
 			body: {
@@ -33,7 +35,7 @@ const theme = extendTheme({
 				lineHeight: "base",
 				padding: 0,
 				margin: 0,
-				backgroundColor: "brand.secondary",
+				background: "brand.secondary",
 			},
 			a: {
 				color: "inherit",

@@ -5,11 +5,10 @@ import NextLink from "next/link";
 export default function Main(): JSX.Element {
 	return (
 		<HStack
+			p="3"
 			justify="space-between"
 			bg="brand.transparent"
 			backdropFilter="blur(12px)"
-			px="50px"
-			py="10px"
 			as="header"
 			top="0"
 			pos="sticky"
@@ -25,13 +24,12 @@ export default function Main(): JSX.Element {
 			</NextLink>
 			<HStack
 				divider={<StackDivider borderColor="gray.200" />}
-				px="50px"
 				align="center"
 				spacing={4}
 			>
-				<Link href="#intro">Home</Link>
-				<Link href="#projects">Projects</Link>
-				<Link href="/contact">Contact</Link>
+				<NextLink href="/">Home</NextLink>
+				<NextLink href="#projects">Projects</NextLink>
+				<NextLink href="/contact">Contact</NextLink>
 			</HStack>
 		</HStack>
 	);
