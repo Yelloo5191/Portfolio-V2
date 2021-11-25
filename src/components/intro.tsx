@@ -6,7 +6,7 @@ import Button from "@components/button";
 import { motion } from "framer-motion";
 
 export default function Intro(): JSX.Element {
-	const fadeInLeft = {
+	const fadeInRight = {
 		initial: {
 			x: -100,
 			opacity: 0,
@@ -28,7 +28,7 @@ export default function Intro(): JSX.Element {
 			},
 		},
 	};
-	const fadeInRight = {
+	const fadeInLeft = {
 		initial: {
 			x: 100,
 			opacity: 0,

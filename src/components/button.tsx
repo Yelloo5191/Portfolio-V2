@@ -14,7 +14,10 @@ export default function Button(props: any): JSX.Element {
 			fontSize="16px"
 			fontWeight="semibold"
 			bg="brand.gradient"
-			_hover={{ transform: "scale(0.95)", boxShadow: "md" }}
+			_hover={{
+				transform: "scale(0.95)",
+				boxShadow: "md",
+			}}
 			_active={{
 				transform: "scale(0.90)",
 			}}

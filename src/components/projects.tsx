@@ -3,7 +3,7 @@ import Panel from "./panel";
 
 export default function Projects(): JSX.Element {
 	return (
-		<VStack id="projects">
+		<VStack h="100vh" my="25vh" id="projects">
 			<Heading fontSize="75px">Projects</Heading>
 
 			<SimpleGrid columns={2} spacing={8}>
