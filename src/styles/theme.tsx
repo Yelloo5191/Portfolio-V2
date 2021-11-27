@@ -13,6 +13,7 @@ const theme = extendTheme({
 			gradient:
 				"linear-gradient(to bottom, rgba(255, 186, 8, 1) 0%, rgba(255, 221, 181, 1) 100%)",
 			transparent: "rgba(3,7,30,0.3)",
+			transparentLight: "rgba(252,247,225,0.1)",
 		},
 	},
 	components: {
