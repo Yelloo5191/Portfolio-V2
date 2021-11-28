@@ -129,7 +129,7 @@ export default function Skills(): JSX.Element {
 	);
 }
 
-function SkillItem({ title, ...props }: { title: string }) {
+function SkillItem({ title }: { title: string }) {
 	return (
 		<ListItem color="brand.light" fontSize="20px" fontWeight="bold">
 			<ListIcon as={HiOutlineFastForward} color="brand.primary" />
