@@ -137,7 +137,13 @@ function Slide({ title, role, desc, image, github, link }: any): JSX.Element {
 					w="100%"
 					src={image}
 				/>
-				<VStack p="15px" align="start" h={["25vh", "50vh"]} w="100%">
+				<VStack
+					overflow="hidden"
+					p="15px"
+					align="start"
+					h={["25vh", "50vh"]}
+					w="100%"
+				>
 					<Heading
 						fontSize={["30px", "60px"]}
 						color="brand.primary"
@@ -148,7 +154,10 @@ function Slide({ title, role, desc, image, github, link }: any): JSX.Element {
 					<Heading fontSize="20px" color="brand.light">
 						{role}
 					</Heading>
-					<Text fontSize={["15px", "30px"]} py="15px">
+					<Text
+						fontSize={{ base: "15px", lg: "15px", xl: "30px" }}
+						py="15px"
+					>
 						{desc}
 					</Text>
 					<HStack
