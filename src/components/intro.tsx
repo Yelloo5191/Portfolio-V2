@@ -5,18 +5,14 @@ import { motion } from "framer-motion";
 import ContainerBackground from "./containerBackground";
 
 export default function Intro(): JSX.Element {
-	const fadeInLeft = {
+	const fadeInTop = {
 		initial: {
-			x: 100,
 			opacity: 0,
+			y: -50,
 		},
-		animate: {
-			x: 0,
+		animation: {
 			opacity: 1,
-			transition: {
-				duration: 1,
-				ease: "easeInOut",
-			},
+			y: 0,
 		},
 	};
 	return (
@@ -25,8 +21,9 @@ export default function Intro(): JSX.Element {
 				<HStack>
 					<motion.div
 						initial="initial"
-						animate="animate"
-						variants={fadeInLeft}
+						animate="animation"
+						variants={fadeInTop}
+						transition={{ duration: 1 }}
 					>
 						<VStack
 							mt="25vh"

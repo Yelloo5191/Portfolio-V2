@@ -15,6 +15,7 @@ import { BiLinkExternal } from "react-icons/bi";
 import { useControllableState } from "@chakra-ui/react";
 import { useEffect } from "react";
 import Container from "./container";
+import { motion } from "framer-motion";
 
 export default function Projects(): JSX.Element {
 	const [selected, setSelected] = useControllableState({ defaultValue: 0 });
@@ -45,76 +46,97 @@ export default function Projects(): JSX.Element {
 			</HStack>
 		);
 	}
+	const fadeUpVariants = {
+		offscreen: {
+			opacity: 0,
+			y: 50,
+		},
+		onscreen: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 1,
+			},
+		},
+	};
 	return (
 		<Container>
-			<Stack
-				mx="15px"
-				spacing={50}
-				id="skills"
-				my="10em"
-				minH="100vh"
-				justify="space-evenly"
+			<motion.div
+				initial="offscreen"
+				whileInView="onscreen"
+				viewport={{ amount: 0.1, once: true }}
+				variants={fadeUpVariants}
 			>
-				<Heading textAlign="center" w={["45vh", "100vh"]}>
-					Projects
-				</Heading>
-				<Text
-					textAlign="center"
-					color="brand.light"
-					w={["45vh", "100vh"]}
+				<Stack
+					id="skills"
+					my="10em"
+					minH="100vh"
+					justify="space-evenly"
 				>
-					Here are some projects I've worked on...
-				</Text>
+					<Heading textAlign="center" w={["45vh", "100vh"]}>
+						Projects
+					</Heading>
+					<Text
+						textAlign="center"
+						color="brand.light"
+						w={["45vh", "100vh"]}
+					>
+						Here are some projects I've worked on...
+					</Text>
 
-				<VStack h="100vh" my={["50vh", "25vh"]} id="projects">
-					<Slide
-						title={projects[selected].title}
-						role={projects[selected].role}
-						desc={projects[selected].desc}
-						image={projects[selected].image}
-						github={projects[selected].github}
-						link={projects[selected].link}
-					/>
+					<VStack h="100vh" my={["50vh", "25vh"]} id="projects">
+						<Slide
+							title={projects[selected].title}
+							role={projects[selected].role}
+							desc={projects[selected].desc}
+							image={projects[selected].image}
+							github={projects[selected].github}
+							link={projects[selected].link}
+						/>
 
-					<HStack justify="space-between">
-						<button
-							onClick={() =>
-								setSelected(
-									selected - 1 < 0 ? selected : selected - 1
-								)
-							}
-						>
-							<IconContext.Provider
-								value={{
-									color: "brand.light",
+						<HStack justify="space-between">
+							<button
+								onClick={() =>
+									setSelected(
+										selected - 1 < 0
+											? selected
+											: selected - 1
+									)
+								}
+							>
+								<IconContext.Provider
+									value={{
+										color: "brand.light",
+									}}
+								>
+									<GoTriangleLeft size="40px" />
+								</IconContext.Provider>
+							</button>
+							{projects.map((project) => {
+								return <NavSlide index={project.key} />;
+							})}
+							<button
+								onClick={() => {
+									setSelected(
+										selected + 1 >=
+											Object.keys(projects).length
+											? selected
+											: selected + 1
+									);
 								}}
 							>
-								<GoTriangleLeft size="40px" />
-							</IconContext.Provider>
-						</button>
-						{projects.map((project) => {
-							return <NavSlide index={project.id} />;
-						})}
-						<button
-							onClick={() => {
-								setSelected(
-									selected + 1 >= Object.keys(projects).length
-										? selected
-										: selected + 1
-								);
-							}}
-						>
-							<IconContext.Provider
-								value={{
-									color: "brand.light",
-								}}
-							>
-								<GoTriangleRight size="40px" />
-							</IconContext.Provider>
-						</button>
-					</HStack>
-				</VStack>
-			</Stack>
+								<IconContext.Provider
+									value={{
+										color: "brand.light",
+									}}
+								>
+									<GoTriangleRight size="40px" />
+								</IconContext.Provider>
+							</button>
+						</HStack>
+					</VStack>
+				</Stack>
+			</motion.div>
 		</Container>
 	);
 }
@@ -123,15 +145,19 @@ function Slide({ title, role, desc, image, github, link }: any): JSX.Element {
 	return (
 		<Box
 			borderRadius="15px"
-			w={["45vh", "100vh"]}
-			h={["60vh", "50vh"]}
+			w={["45vh", "45vh", "100vh"]}
+			h={["60vh", "100vh", "50vh"]}
 			bg="brand.transparentLight"
 		>
-			<Stack direction={["column", "row"]}>
+			<Stack direction={["column", "column", "row"]}>
 				<Image
 					overflow="hidden"
 					draggable="false"
-					borderRadius={["15px 15px 0px 0px", "15px 0px 0px 15px"]}
+					borderRadius={[
+						"15px 15px 0px 0px",
+						"15px 15px 0px 0px",
+						"15px 0px 0px 15px",
+					]}
 					objectFit="cover"
 					h={["25vh", "50vh"]}
 					w="100%"
@@ -154,16 +180,10 @@ function Slide({ title, role, desc, image, github, link }: any): JSX.Element {
 					<Heading fontSize="20px" color="brand.light">
 						{role}
 					</Heading>
-					<Text fontSize={{ base: "15px", lg: "15px" }} py="15px">
+					<Text fontSize={{ base: "15px", lg: "25px" }} py="15px">
 						{desc}
 					</Text>
-					<HStack
-						cursor="pointer"
-						w="100%"
-						h="100%"
-						align="end"
-						justify="right"
-					>
+					<HStack w="100%" h="100%" align="end" justify="right">
 						<NextChakraLink target="_blank" href={github}>
 							<IconContext.Provider
 								value={{
@@ -191,7 +211,7 @@ function Slide({ title, role, desc, image, github, link }: any): JSX.Element {
 
 const projects = [
 	{
-		id: 0,
+		key: 0,
 		title: "School Simplified",
 		role: "Frontend Developer",
 		desc: "School Simplified is a verified, student-ran NPO dedicated to expanding opportunitities for students throughout the globe.",
@@ -200,7 +220,7 @@ const projects = [
 		link: "https://schoolsimplified.org/",
 	},
 	{
-		id: 1,
+		key: 1,
 		title: "Programming Simplified",
 		role: "Frontend Developer",
 		image: "projects/programming.png",
@@ -209,7 +229,7 @@ const projects = [
 		link: "https://programming.schoolsimplified.org/",
 	},
 	{
-		id: 2,
+		key: 2,
 		title: "Ares",
 		role: "Solo Developer",
 		image: "projects/ares.png",
@@ -218,7 +238,7 @@ const projects = [
 		link: "https://github.com/Yelloo5191/Ares-Bot",
 	},
 	{
-		id: 3,
+		key: 3,
 		title: "Learner Projects",
 		role: "Solo Developer",
 		desc: "Various Mini-Python Projects",

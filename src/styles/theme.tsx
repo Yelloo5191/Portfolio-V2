@@ -14,6 +14,8 @@ const theme = extendTheme({
 				"linear-gradient(to bottom, rgba(255, 186, 8, 1) 0%, rgba(255, 221, 181, 1) 100%)",
 			transparent: "rgba(3,7,30,0.3)",
 			transparentLight: "rgba(252,247,225,0.1)",
+			scrollbar:
+				"linear-gradient(to bottom, rgba(34, 37, 51, 1) 0%, rgba(0, 0, 0, 1) 100%)",
 		},
 	},
 	components: {
@@ -50,7 +52,7 @@ const theme = extendTheme({
 			},
 			"&::-webkit-scrollbar-track": {
 				borderRadius: "0px",
-				background: "transparent",
+				background: "brand.scrollbar",
 			},
 			"&::-webkit-scrollbar-thumb": {
 				background: "brand.primary",
