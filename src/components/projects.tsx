@@ -24,7 +24,7 @@ export default function Projects(): JSX.Element {
 			setSelected(
 				selected + 1 >= Object.keys(projects).length ? 0 : selected + 1
 			);
-		}, 3000);
+		}, 5000);
 		return () => {
 			clearInterval(interval);
 		};
@@ -154,10 +154,7 @@ function Slide({ title, role, desc, image, github, link }: any): JSX.Element {
 					<Heading fontSize="20px" color="brand.light">
 						{role}
 					</Heading>
-					<Text
-						fontSize={{ base: "15px", lg: "15px", xl: "30px" }}
-						py="15px"
-					>
+					<Text fontSize={{ base: "15px", lg: "15px" }} py="15px">
 						{desc}
 					</Text>
 					<HStack
