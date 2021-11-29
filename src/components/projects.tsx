@@ -163,26 +163,14 @@ function Slide({ title, role, desc, image, github, link }: any): JSX.Element {
 					w="100%"
 					src={image}
 				/>
-				<VStack
-					overflow="hidden"
-					p="15px"
-					align="start"
-					h={["25vh", "50vh"]}
-					w="100%"
-				>
-					<Heading
-						fontSize={["30px", "60px"]}
-						color="brand.primary"
-						fontWeight="bold"
-					>
+				<VStack p="15px" align="start" h={["25vh", "50vh"]} w="100%">
+					<Heading color="brand.primary" fontWeight="bold">
 						{title}
 					</Heading>
 					<Heading fontSize="20px" color="brand.light">
 						{role}
 					</Heading>
-					<Text fontSize={{ base: "15px", lg: "25px" }} py="15px">
-						{desc}
-					</Text>
+					<Text fontSize={{ base: "15px", lg: "25px" }}>{desc}</Text>
 					<HStack w="100%" h="100%" align="end" justify="right">
 						<NextChakraLink target="_blank" href={github}>
 							<IconContext.Provider
