@@ -1,8 +1,15 @@
 import { HStack, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
+// import {
+// 	Section,
+// 	useScrollSection,
+// 	ScrollingProvider,
+// } from "react-scroll-section";
 
 // eslint-disable-next-line import/no-default-export
 export default function Main(): JSX.Element {
+	// const sProject = useScrollSection("projects");
+
 	return (
 		<HStack
 			minH="100px"
@@ -20,8 +27,12 @@ export default function Main(): JSX.Element {
 				<NextLink href="/">
 					<FloatUnderline text="Home" cursor="pointer" />
 				</NextLink>
-				<NextLink href="#projects">
-					<FloatUnderline text="Projects" cursor="pointer" />
+				<NextLink href="/#projects">
+					<FloatUnderline
+						// onClick={sProject.onClick}
+						text="Projects"
+						cursor="pointer"
+					/>
 				</NextLink>
 				<NextLink href="/contact">
 					<FloatUnderline text="Contact" cursor="pointer" />

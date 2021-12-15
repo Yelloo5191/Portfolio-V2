@@ -21,6 +21,7 @@ export function SlidingPanel({
 	github,
 	link,
 }): JSX.Element {
+	const light = "var(--chakra-colors-brand-light)";
 	return (
 		<Box w="75vw" h="50vh" bg="brand.transparentLight" rounded="15px">
 			<HStack align="start">
@@ -42,14 +43,10 @@ export function SlidingPanel({
 					</VStack>
 					<HStack>
 						<NextChakraLink href={github}>
-							<IconContext.Provider value={{ size: "2em" }}>
-								<GoMarkGithub />
-							</IconContext.Provider>
+							<GoMarkGithub size="30px" color={light} />
 						</NextChakraLink>
 						<NextChakraLink href={link}>
-							<IconContext.Provider value={{ size: "2em" }}>
-								<BiLinkExternal />
-							</IconContext.Provider>
+							<BiLinkExternal size="30px" color={light} />
 						</NextChakraLink>
 					</HStack>
 				</VStack>
@@ -95,6 +92,7 @@ export function Slide({ infos, selected, setSelected }): JSX.Element {
 									? "brand.light"
 									: "brand.transparentLight"
 							}
+							cursor="pointer"
 						>
 							{index === selected ? (
 								<IconContext.Provider value={{ size: "2em" }}>

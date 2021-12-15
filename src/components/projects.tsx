@@ -65,12 +65,13 @@ export default function Projects(): JSX.Element {
 			y: 0,
 			transition: {
 				duration: 1,
+				delay: 0.3,
 			},
 		},
 	};
 
 	return (
-		<Container>
+		<Container id="projects">
 			<ContainerInside>
 				<motion.div
 					initial="offscreen"
@@ -78,7 +79,7 @@ export default function Projects(): JSX.Element {
 					viewport={{ amount: 0.1, once: true }}
 					variants={fadeUpVariants}
 				>
-					<Stack id="skills" my="10em" minH="100vh">
+					<Stack my="10em" minH="100vh">
 						<Heading textAlign="center">Projects</Heading>
 						<Text textAlign="center" color="brand.light">
 							Here are some projects I've worked on...

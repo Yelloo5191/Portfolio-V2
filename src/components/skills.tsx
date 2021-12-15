@@ -14,32 +14,6 @@ import { HiOutlineFastForward } from "react-icons/hi";
 import { motion } from "framer-motion";
 
 export default function Skills(): JSX.Element {
-	const headingVariants = {
-		offscreen: {
-			opacity: 0,
-			x: -50,
-		},
-		onscreen: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 1,
-			},
-		},
-	};
-	const textVariants = {
-		offscreen: {
-			opacity: 0,
-			x: 50,
-		},
-		onscreen: {
-			opacity: 1,
-			x: 0,
-			transition: {
-				duration: 1,
-			},
-		},
-	};
 	const fadeUpVariants = {
 		offscreen: {
 			opacity: 0,
@@ -50,6 +24,7 @@ export default function Skills(): JSX.Element {
 			y: 0,
 			transition: {
 				duration: 1,
+				delay: 0.3,
 			},
 		},
 	};
@@ -73,7 +48,7 @@ export default function Skills(): JSX.Element {
 						initial="offscreen"
 						whileInView="onscreen"
 						viewport={{ amount: 0.1, once: true }}
-						variants={headingVariants}
+						variants={fadeUpVariants}
 						style={{ width: "100%" }}
 					>
 						<Heading w="100%">Skills</Heading>
@@ -82,7 +57,7 @@ export default function Skills(): JSX.Element {
 						initial="offscreen"
 						whileInView="onscreen"
 						viewport={{ amount: 0.1, once: true }}
-						variants={textVariants}
+						variants={fadeUpVariants}
 						style={{ width: "100%" }}
 					>
 						<Text color="brand.light" w="100%">

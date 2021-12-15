@@ -8,26 +8,28 @@ export default function About(): JSX.Element {
 	const headingVariants = {
 		offscreen: {
 			opacity: 0,
-			x: -50,
+			y: -50,
 		},
 		onscreen: {
 			opacity: 1,
-			x: 0,
+			y: 0,
 			transition: {
 				duration: 1,
+				delay: 0.3,
 			},
 		},
 	};
 	const textVariants = {
 		offscreen: {
 			opacity: 0,
-			x: 50,
+			y: 50,
 		},
 		onscreen: {
 			opacity: 1,
-			x: 0,
+			y: 0,
 			transition: {
 				duration: 1,
+				delay: 0.3,
 			},
 		},
 	};
@@ -61,9 +63,10 @@ export default function About(): JSX.Element {
 					>
 						<Text color="brand.light" w="100%">
 							My name is Hovhannes Muradyan and I am an aspiring
-							Software Engineer looking to learn and grow. All I
-							know about programming has been self taught and I am
-							currently a 17 year old High School student.
+							Software Engineer looking to learn and grow. I am
+							currently a 17 year old High School student and all
+							of my knowledge with programming has been
+							self-taught.
 						</Text>
 					</motion.div>
 				</Stack>
