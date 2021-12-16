@@ -75,7 +75,10 @@ export default function ReqHelp(): JSX.Element {
 
 			<Drawer isOpen={isOpen} placement="right" onClose={onClose}>
 				<DrawerOverlay />
-				<DrawerContent bg="brand.transparentLight">
+				<DrawerContent
+					backdropFilter="blur(12px)"
+					bg="brand.transparentLight"
+				>
 					<DrawerCloseButton />
 					<DrawerHeader>Report an issue</DrawerHeader>
 
@@ -152,7 +155,7 @@ export default function ReqHelp(): JSX.Element {
 									form="reqHelp"
 									colorScheme="blue"
 								>
-									Save
+									Send
 								</Button>
 							</HStack>
 						</VStack>

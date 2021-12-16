@@ -201,6 +201,7 @@ export default function Contact(): JSX.Element {
 									<Button
 										type="reset"
 										bg="brand.transparentLight"
+										color="brand.light"
 									>
 										Reset
 									</Button>
