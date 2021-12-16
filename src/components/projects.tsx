@@ -22,7 +22,7 @@ export default function Projects(): JSX.Element {
 			image: "projects/programming.png",
 			desc: "Programming Simplified is a program meant to help beginner programmers learn the necessary basic skills to start their own careers and projects.",
 			github: "",
-			link: "https://programming.schoolsimplified.org/",
+			link: "https://programmingsimplified.org/",
 		},
 		{
 			title: "Ares",

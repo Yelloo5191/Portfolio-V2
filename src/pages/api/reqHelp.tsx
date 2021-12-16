@@ -15,10 +15,9 @@ export default function (req, res) {
 	const mailData = {
 		from: process.env.from_email,
 		to: process.env.to_email,
-		subject: `Message From ${req.body.name}`,
-		text: req.body.message + " | Sent from: " + req.body.email,
-		html: `<div>${req.body.message}</div><p>Sent from:
-    ${req.body.email}</p>`,
+		subject: "Requested Help",
+		text: req.body.message,
+		html: `<div>${req.body.message}</div>`,
 	};
 	transporter.sendMail(mailData, function (err, info) {
 		if (err) console.log(err);
