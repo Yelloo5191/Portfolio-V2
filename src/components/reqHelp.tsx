@@ -1,6 +1,7 @@
 import {
 	VStack,
 	HStack,
+	Stack,
 	Box,
 	Heading,
 	Text,
@@ -33,12 +34,13 @@ export default function ReqHelp(): JSX.Element {
 	const upVariant = {
 		hidden: {
 			opacity: 0,
+			x: 100,
 		},
 		visible: {
 			opacity: 1,
+			x: 0,
 			transition: {
 				type: "spring",
-				stiffness: 100,
 				duration: 2,
 				delay: 0.3,
 			},
@@ -47,31 +49,32 @@ export default function ReqHelp(): JSX.Element {
 
 	return (
 		<>
-			<motion.div initial="hidden" animate="visible" variants={upVariant}>
-				<Box
-					display={viewReq ? "block" : "none"}
-					pos="fixed"
-					bottom={0}
-					right={0}
-					w="300px"
-					bg="brand.transparentLight"
-					p={15}
-					m={15}
-					borderRadius={15}
-					zIndex={1}
+			<Stack zIndex={1} m={15} pos="fixed" bottom={0} right={0}>
+				<motion.div
+					initial="hidden"
+					animate="visible"
+					variants={upVariant}
 				>
-					<Heading fontSize="25px">Need help?</Heading>
-					<Text>Send a message!</Text>
-					<Button onClick={onOpen}>Yes!</Button>
-					<CloseButton
-						color="white"
-						position="absolute"
-						right="8px"
-						top="8px"
-						onClick={() => setViewReq(false)}
-					/>
-				</Box>
-			</motion.div>
+					<Box
+						display={viewReq ? "block" : "none"}
+						w="300px"
+						bg="brand.transparentLight"
+						p={15}
+						borderRadius={15}
+					>
+						<Heading fontSize="25px">Need help?</Heading>
+						<Text>Send a message!</Text>
+						<Button onClick={onOpen}>Yes!</Button>
+						<CloseButton
+							color="white"
+							position="absolute"
+							right="8px"
+							top="8px"
+							onClick={() => setViewReq(false)}
+						/>
+					</Box>
+				</motion.div>
+			</Stack>
 
 			<Drawer isOpen={isOpen} placement="right" onClose={onClose}>
 				<DrawerOverlay />
@@ -126,13 +129,15 @@ export default function ReqHelp(): JSX.Element {
 						<VStack>
 							<Box display={viewAlert ? "block" : "none"}>
 								<Alert status="success">
-									<AlertTitle color="black" mr={2}>
-										Contacted!
-									</AlertTitle>
-									<AlertDescription color="black">
-										Your message was successfully sent,
-										thank you for contacting me.
-									</AlertDescription>
+									<VStack>
+										<AlertTitle color="black" mr={2}>
+											Contacted!
+										</AlertTitle>
+										<AlertDescription color="black">
+											Your message was successfully sent,
+											thank you for contacting me.
+										</AlertDescription>
+									</VStack>
 									<CloseButton
 										color="black"
 										position="absolute"
