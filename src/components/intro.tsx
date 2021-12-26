@@ -16,7 +16,7 @@ export default function Intro(): JSX.Element {
 		},
 	};
 	return (
-		<ContainerBackground src="intro_bg.png">
+		<ContainerBackground src="https://c.tenor.com/2gfRHLv6GZ8AAAAd/code-coding.gif">
 			<VStack minH="100vh" id="intro">
 				<motion.div
 					initial="initial"

@@ -1,5 +1,5 @@
 import { HStack, Text } from "@chakra-ui/react";
-import NextLink from "next/link";
+import NextChakraLink from "./nextChakraLink";
 // import {
 // 	Section,
 // 	useScrollSection,
@@ -24,19 +24,19 @@ export default function Main(): JSX.Element {
 			zIndex={1000}
 		>
 			<HStack spacing={6}>
-				<NextLink href="/">
+				<NextChakraLink href="/">
 					<FloatUnderline text="Home" cursor="pointer" />
-				</NextLink>
-				<NextLink href="/#projects">
+				</NextChakraLink>
+				<NextChakraLink href="/#projects">
 					<FloatUnderline
 						// onClick={sProject.onClick}
 						text="Projects"
 						cursor="pointer"
 					/>
-				</NextLink>
-				<NextLink href="/contact">
+				</NextChakraLink>
+				<NextChakraLink href="/contact">
 					<FloatUnderline text="Contact" cursor="pointer" />
-				</NextLink>
+				</NextChakraLink>
 			</HStack>
 		</HStack>
 	);

@@ -11,7 +11,7 @@ export default function NextChakraLink(props: any): JSX.Element {
 				{...props}
 				_active={{ boxShadow: "none" }}
 				_focus={{ boxShadow: "none" }}
-				_hover={{ textDecoration: "none" }}
+				_hover={{ textDecoration: "none", color: "brand.primary" }}
 			>
 				{props.children}
 			</Link>

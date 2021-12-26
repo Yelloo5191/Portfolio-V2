@@ -87,19 +87,17 @@ export default function Contact(): JSX.Element {
 							message: "",
 						}}
 						onSubmit={(values, actions) => {
-							setTimeout(() => {
-								fetch("/api/contact", {
-									method: "POST",
-									headers: {
-										Accept: "application/json, text/plain, */*",
-										"Content-Type": "application/json",
-									},
-									body: JSON.stringify(values),
-								});
-								setViewAlert(true);
-								actions.setSubmitting(false);
-								actions.resetForm();
-							}, 1000);
+							fetch("/api/contact", {
+								method: "POST",
+								headers: {
+									Accept: "application/json, text/plain, */*",
+									"Content-Type": "application/json",
+								},
+								body: JSON.stringify(values),
+							});
+							setViewAlert(true);
+							actions.setSubmitting(false);
+							actions.resetForm();
 						}}
 					>
 						<ChaForm w={{ base: "100%", md: "50%" }}>
@@ -136,7 +134,7 @@ export default function Contact(): JSX.Element {
 								initial="hidden"
 								animate="visible"
 								variants={upVariant}
-								transition={{ duration: 1, delay: 1 }}
+								transition={{ duration: 1, delay: 0.7 }}
 							>
 								<Box
 									bg="brand.transparentLight"
@@ -166,7 +164,7 @@ export default function Contact(): JSX.Element {
 								initial="hidden"
 								animate="visible"
 								variants={upVariant}
-								transition={{ duration: 1, delay: 1.5 }}
+								transition={{ duration: 1, delay: 0.9 }}
 							>
 								<Box
 									bg="brand.transparentLight"
@@ -195,7 +193,7 @@ export default function Contact(): JSX.Element {
 								initial="hidden"
 								animate="visible"
 								variants={upVariant}
-								transition={{ duration: 1, delay: 2 }}
+								transition={{ duration: 1, delay: 1.1 }}
 							>
 								<HStack justify="space-between">
 									<Button
