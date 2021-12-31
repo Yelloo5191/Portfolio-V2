@@ -62,7 +62,7 @@ export default function Contact(): JSX.Element {
 					<Center width="100%">
 						<motion.div
 							initial="hidden"
-							animate="visible"
+							whileInView="visible"
 							variants={upVariant}
 							transition={{ duration: 1 }}
 						>
@@ -132,7 +132,7 @@ export default function Contact(): JSX.Element {
 							</motion.div>
 							<motion.div
 								initial="hidden"
-								animate="visible"
+								whileInView="visible"
 								variants={upVariant}
 								transition={{ duration: 1, delay: 0.7 }}
 							>
@@ -162,7 +162,7 @@ export default function Contact(): JSX.Element {
 							</motion.div>
 							<motion.div
 								initial="hidden"
-								animate="visible"
+								whileInView="visible"
 								variants={upVariant}
 								transition={{ duration: 1, delay: 0.9 }}
 							>
@@ -191,7 +191,7 @@ export default function Contact(): JSX.Element {
 							</motion.div>
 							<motion.div
 								initial="hidden"
-								animate="visible"
+								whileInView="visible"
 								variants={upVariant}
 								transition={{ duration: 1, delay: 1.1 }}
 							>
@@ -199,7 +199,13 @@ export default function Contact(): JSX.Element {
 									<Button
 										type="reset"
 										bg="brand.transparentLight"
+										border="1px solid var(--chakra-colors-brand-transparent)"
 										color="brand.light"
+										_hover={{
+											bg: "brand.transparent",
+											color: "brand.light",
+											border: "1px solid var(--chakra-colors-brand-transparentLight)",
+										}}
 									>
 										Reset
 									</Button>

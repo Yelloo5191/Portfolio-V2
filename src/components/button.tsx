@@ -9,17 +9,19 @@ export default function Button(props: any): JSX.Element {
 			px={4}
 			py={2}
 			as="button"
-			transition="all 0.2s ease"
+			transition="all 0.3s ease"
 			borderRadius="25px"
 			fontSize="16px"
 			fontWeight="semibold"
+			border="1px solid var(--chakra-colors-brand-primary)"
 			bg="brand.gradient"
 			_hover={{
-				transform: "scale(0.95)",
-				boxShadow: "md",
+				background: "brand.transparent",
+				color: "var(--chakra-colors-brand-primary)",
 			}}
 			_active={{
 				transform: "scale(0.90)",
+				boxShadow: "md",
 			}}
 			{...props}
 			boxShadow="lg"

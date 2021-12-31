@@ -1,4 +1,4 @@
-import { VStack, Heading, Link } from "@chakra-ui/react";
+import { HStack, VStack, Text, Heading, Link } from "@chakra-ui/react";
 import Button from "@components/button";
 // import NextChakraLink from "./nextChakraLink";
 import { motion } from "framer-motion";
@@ -17,42 +17,36 @@ export default function Intro(): JSX.Element {
 	};
 	return (
 		<ContainerBackground src="https://c.tenor.com/2gfRHLv6GZ8AAAAd/code-coding.gif">
-			<VStack minH="100vh" id="intro">
+			<HStack
+				mr="auto"
+				p={{ base: "0", md: "100px" }}
+				minH="100vh"
+				id="intro"
+			>
 				<motion.div
 					initial="initial"
 					animate="animation"
 					variants={fadeInTop}
 					transition={{ duration: 1, delay: 0.3 }}
 				>
-					<VStack
-						mt="25vh"
-						mx="10px"
-						align={{ base: "left", lg: "center" }}
-					>
-						<Heading fontSize="50px">
-							Developing the future...
+					<VStack mx="10px" align="left">
+						<Heading fontSize={{ base: "50px", md: "90px" }}>
+							Hovhannes Muradyan.
 						</Heading>
-						<Heading fontSize="40px" color="brand.light">
-							Greetings,
-						</Heading>
-						<Heading fontSize="15px" color="brand.light">
-							I am{" "}
-							<span
-								style={{
-									fontSize: "25px",
-									fontWeight: "bold",
-									color: "var(--chakra-colors-brand-primary)",
-								}}
-							>
-								Hovhannes M.
-							</span>
-						</Heading>
+						<Text
+							color="brand.light"
+							fontSize={{ base: "15px", md: "20px" }}
+						>
+							Greetings, I am a student{" "}
+							<strong>programmer</strong> and hobbyist helping{" "}
+							<strong>develop</strong> the future.
+						</Text>
 						<Link href="#aboutme">
 							<Button>Who?</Button>
 						</Link>
 					</VStack>
 				</motion.div>
-			</VStack>
+			</HStack>
 		</ContainerBackground>
 	);
 }

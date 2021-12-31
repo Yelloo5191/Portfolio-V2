@@ -30,19 +30,12 @@ export default function Skills(): JSX.Element {
 	};
 	return (
 		<ContainerBackground src="skills_bg.jpg">
-			<VStack
-				mx="15px"
-				spacing={50}
-				id="skills"
-				my="10em"
-				minH="100vh"
-				justify="space-evenly"
-			>
+			<VStack justify="center" mx="15px" id="skills" minH="100vh">
 				<Stack
-					minH="100%"
 					align="center"
 					direction={{ base: "column", lg: "row" }}
 					spacing={{ base: 5, lg: 20 }}
+					mb={10}
 				>
 					<motion.div
 						initial="offscreen"
@@ -77,11 +70,9 @@ export default function Skills(): JSX.Element {
 					<Box
 						align="center"
 						borderRadius="15px"
-						w="100%"
 						bg="brand.transparentLight"
 						backdropFilter="blur(12px)"
 						p="3"
-						zIndex={999}
 					>
 						<List spacing={5} p="15px">
 							<SimpleGrid columns={2} spacing={5}>
