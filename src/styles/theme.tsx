@@ -31,6 +31,7 @@ const theme = extendTheme({
 		global: () => ({
 			html: {
 				scrollBehavior: "smooth",
+				height: "100%",
 			},
 			body: {
 				fontFamily: "montserrat",
@@ -39,6 +40,7 @@ const theme = extendTheme({
 				padding: 0,
 				margin: 0,
 				background: "brand.secondary",
+				height: "100%",
 			},
 			a: {
 				color: "inherit",

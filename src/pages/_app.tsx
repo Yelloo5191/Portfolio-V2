@@ -21,12 +21,11 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 			router.events.off("routeChangeComplete", handleRouteChange);
 		};
 	}, [router.events]);
-	
 	return (
 		<>
 			<Head>
 				<title>{META.title}</title>
-				<link rel="icon" href="/favicon.ico" />
+				<link rel="icon" href="/images/favicon.ico" />
 			</Head>
 			<ChakraProvider theme={theme}>
 				<Header />
