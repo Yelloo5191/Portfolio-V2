@@ -3,7 +3,6 @@ import Container from "./container";
 export default function ContainerBackground(props) {
 	return (
 		<Container
-			position="relative"
 			zIndex={1}
 			_before={{
 				content: "''",

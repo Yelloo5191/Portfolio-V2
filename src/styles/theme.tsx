@@ -16,6 +16,7 @@ const theme = extendTheme({
 			transparentLight: "rgba(252,247,225,0.1)",
 			scrollbar:
 				"linear-gradient(to bottom, rgba(34, 37, 51, 1) 0%, rgba(0, 0, 0, 1) 100%)",
+			navBg: "linear-gradient(to bottom, rgba(34, 37, 51, 1) 0%, rgba(0, 0, 0, 1) 100%)",
 		},
 	},
 	components: {
