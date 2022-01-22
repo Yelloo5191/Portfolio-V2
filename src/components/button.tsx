@@ -14,10 +14,11 @@ export default function Button(props: any): JSX.Element {
 			fontSize="16px"
 			fontWeight="semibold"
 			border="1px solid var(--chakra-colors-brand-primary)"
-			bg="brand.gradient"
+			background="brand.transparent"
+			color="var(--chakra-colors-brand-primary)"
 			_hover={{
-				background: "brand.transparent",
-				color: "var(--chakra-colors-brand-primary)",
+				background: "brand.primary",
+				color: "white",
 			}}
 			_active={{
 				transform: "scale(0.90)",

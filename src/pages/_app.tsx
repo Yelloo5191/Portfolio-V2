@@ -7,10 +7,8 @@ import { META } from "config";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "@fontsource/montserrat/400.css";
-
-import SplashAnimation from "@components/splash";
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	const router = useRouter();
@@ -24,30 +22,19 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 		};
 	}, [router.events]);
 
-	const Splash = ({ children }) => {
-		const [loading, setLoading] = useState(true);
-		useEffect(() => {
-			setTimeout(() => {
-				setLoading(false);
-			}, 2500);
-		}, []);
-		return !loading ? children : <SplashAnimation />;
-	};
 	return (
 		<>
-			<Splash>
-				<Head>
-					<title>{META.title}</title>
-					<link rel="icon" href="/images/favicon.ico" />
-				</Head>
-				<ChakraProvider theme={theme}>
-					<Header />
+			<Head>
+				<title>{META.title}</title>
+				<link rel="icon" href="/images/favicon.ico" />
+			</Head>
+			<ChakraProvider theme={theme}>
+				<Header />
 
-					<Component {...pageProps} />
+				<Component {...pageProps} />
 
-					<Footer />
-				</ChakraProvider>
-			</Splash>
+				<Footer />
+			</ChakraProvider>
 		</>
 	);
 }

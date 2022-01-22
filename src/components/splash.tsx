@@ -1,9 +1,10 @@
-import { motion } from "framer-motion";
 import { Box, Image } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
-export default function SplashAnimation(): JSX.Element {
+export default function Splash() {
 	return (
 		<Box
+			position="absolute"
 			m={0}
 			p={0}
 			h="100vh"
@@ -11,11 +12,10 @@ export default function SplashAnimation(): JSX.Element {
 			d="flex"
 			alignItems="center"
 			justifyContent="center"
-			background="brand.secondary"
 		>
 			<motion.div
 				animate={{
-					scale: [1, 2, 2, 1, 1],
+					scale: [1, 2, 3, 2, 1],
 					rotate: [0, 0, 270, 270, 0],
 				}}
 				transition={{

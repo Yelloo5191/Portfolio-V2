@@ -14,7 +14,8 @@ export default function About(): JSX.Element {
 			opacity: 1,
 			y: 0,
 			transition: {
-				duration: 1,
+				type: "spring",
+				duration: 2,
 				delay: 0.3,
 			},
 		},
@@ -28,27 +29,27 @@ export default function About(): JSX.Element {
 			opacity: 1,
 			y: 0,
 			transition: {
-				duration: 1,
+				type: "spring",
+				duration: 2,
 				delay: 0.3,
 			},
 		},
 	};
 
 	return (
-		<Container>
+		<Container minH="100vh">
 			<ContainerInside>
 				<Stack
 					direction={{ base: "column", lg: "row" }}
 					id="aboutme"
 					my="10em"
-					minH="50vh"
 					spacing={{ base: 5, lg: 20 }}
 					align="center"
 				>
 					<motion.div
 						initial="offscreen"
 						whileInView="onscreen"
-						viewport={{ amount: 0.1, once: true }}
+						viewport={{ amount: 0.1 }}
 						variants={headingVariants}
 						style={{ width: "100%" }}
 					>
@@ -57,7 +58,7 @@ export default function About(): JSX.Element {
 					<motion.div
 						initial="offscreen"
 						whileInView="onscreen"
-						viewport={{ amount: 0.1, once: true }}
+						viewport={{ amount: 0.1 }}
 						variants={textVariants}
 						style={{ width: "100%" }}
 					>

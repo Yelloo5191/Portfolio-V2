@@ -1,105 +1,47 @@
-import {
-	VStack,
-	Stack,
-	Box,
-	Heading,
-	Text,
-	List,
-	ListItem,
-	ListIcon,
-	SimpleGrid,
-} from "@chakra-ui/react";
+// import {
+// VStack,
+// Stack,
+// Box,
+// Heading,
+// Text,
+// List,
+// ListItem,
+// ListIcon,
+// SimpleGrid,
+// } from "@chakra-ui/react";
 import ContainerBackground from "./containerBackground";
-import { HiOutlineFastForward } from "react-icons/hi";
-import { motion } from "framer-motion";
+// import { HiOutlineFastForward } from "react-icons/hi";
+// import { motion } from "framer-motion";
 
 export default function Skills(): JSX.Element {
-	const fadeUpVariants = {
-		offscreen: {
-			opacity: 0,
-			y: 50,
-		},
-		onscreen: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
+	// const fadeUpVariants = {
+	// 	offscreen: {
+	// 		opacity: 0,
+	// 		y: 50,
+	// 	},
+	// 	onscreen: {
+	// 		opacity: 1,
+	// 		y: 0,
+	// 		transition: {
+	// 			duration: 1,
+	// 			delay: 0.3,
+	// 		},
+	// 	},
+	// };
 	return (
-		<ContainerBackground src="skills_bg.jpg">
-			<VStack justify="center" mx="15px" id="skills" minH="100vh">
-				<Stack
-					align="center"
-					direction={{ base: "column", lg: "row" }}
-					spacing={{ base: 5, lg: 20 }}
-					mb={10}
-				>
-					<motion.div
-						initial="offscreen"
-						whileInView="onscreen"
-						viewport={{ amount: 0.1, once: true }}
-						variants={fadeUpVariants}
-						style={{ width: "100%" }}
-					>
-						<Heading w="100%">Skills</Heading>
-					</motion.div>
-					<motion.div
-						initial="offscreen"
-						whileInView="onscreen"
-						viewport={{ amount: 0.1, once: true }}
-						variants={fadeUpVariants}
-						style={{ width: "100%" }}
-					>
-						<Text color="brand.light" w="100%">
-							Throughout my programming journey, I’ve picked up a
-							handful amount of skills and experience. Here are
-							just some of the technologies I’ve worked with...
-						</Text>
-					</motion.div>
-				</Stack>
-				<motion.div
-					initial="offscreen"
-					whileInView="onscreen"
-					viewport={{ amount: 0.1, once: true }}
-					variants={fadeUpVariants}
-					style={{ width: "100%" }}
-				>
-					<Box
-						align="center"
-						borderRadius="15px"
-						bg="brand.transparentLight"
-						backdropFilter="blur(12px)"
-						p="3"
-					>
-						<List spacing={5} p="15px">
-							<SimpleGrid columns={2} spacing={5}>
-								<SkillItem title="Python" />
-								<SkillItem title="JavaScript" />
-								<SkillItem title="TypeScript" />
-								<SkillItem title="HTML" />
-								<SkillItem title="CSS" />
-								<SkillItem title="SQL" />
-								<SkillItem title="React" />
-								<SkillItem title="NextJS" />
-								<SkillItem title="ChakraUI" />
-								<SkillItem title="Git & GitHub" />
-							</SimpleGrid>
-						</List>
-					</Box>
-				</motion.div>
-			</VStack>
-		</ContainerBackground>
+		<ContainerBackground
+			src="images/skills.svg"
+			minH="100vh"
+			position="relative"
+		></ContainerBackground>
 	);
 }
 
-function SkillItem({ title }: { title: string }) {
-	return (
-		<ListItem color="brand.light" fontSize="20px" fontWeight="bold">
-			<ListIcon as={HiOutlineFastForward} color="brand.primary" />
-			{title}
-		</ListItem>
-	);
-}
+// function SkillItem({ title }: { title: string }) {
+// 	return (
+// 		<ListItem color="brand.light" fontSize="20px" fontWeight="bold">
+// 			<ListIcon as={HiOutlineFastForward} color="brand.primary" />
+// 			{title}
+// 		</ListItem>
+// 	);
+// }

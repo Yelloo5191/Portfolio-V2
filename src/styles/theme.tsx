@@ -10,8 +10,6 @@ const theme = extendTheme({
 			light: "#FFDDB5",
 			accent: "#370617",
 			glossy: "linear-gradient(to top left, rgba(255, 245, 220, 0.5) 0%, rgba(255, 221, 181, 1) 100%)",
-			gradient:
-				"linear-gradient(to bottom, rgba(255, 186, 8, 1) 0%, rgba(255, 221, 181, 1) 100%)",
 			transparent: "rgba(3,7,30,0.3)",
 			transparentLight: "rgba(252,247,225,0.1)",
 			scrollbar:
@@ -52,10 +50,10 @@ const theme = extendTheme({
 			},
 			"&::-webkit-scrollbar": {
 				width: "0.6em",
+				background: "brand.scrollbar",
 			},
 			"&::-webkit-scrollbar-track": {
 				borderRadius: "0px",
-				background: "brand.scrollbar",
 			},
 			"&::-webkit-scrollbar-thumb": {
 				background: "brand.primary",
