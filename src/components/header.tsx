@@ -75,6 +75,7 @@ export default function Main(): JSX.Element {
 				_focus={{
 					background: "transparent",
 				}}
+				zIndex={1000}
 			>
 				<AiOutlineMenu size={20} />
 			</Button>

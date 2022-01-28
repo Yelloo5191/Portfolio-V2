@@ -62,7 +62,7 @@ export default function About(): JSX.Element {
 						variants={textVariants}
 						style={{ width: "100%" }}
 					>
-						<Text color="brand.light" w="100%">
+						<Text w="100%">
 							My name is Hovhannes Muradyan and I am an aspiring
 							Software Engineer looking to learn and grow. I am
 							currently a 17 year old High School student and all

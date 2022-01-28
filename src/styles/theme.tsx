@@ -34,7 +34,8 @@ const theme = extendTheme({
 			},
 			body: {
 				fontFamily: "montserrat",
-				color: "white",
+				color: "brand.light",
+				fontSize: "1.2em",
 				lineHeight: "base",
 				padding: 0,
 				margin: 0,
