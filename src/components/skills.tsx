@@ -53,67 +53,72 @@ export default function Skills(): JSX.Element {
 			},
 		},
 	};
+	const circleVariants = {
+		offscreen: {
+			opacity: 0,
+			x: 50,
+		},
+		onscreen: {
+			opacity: 1,
+			x: 0,
+			transition: {
+				type: "spring",
+				duration: 2,
+				delay: 0.3,
+			},
+		},
+	};
 
 	const skills = [
 		{
 			key: 0,
 			name: "JS",
-			tooltip:
-				"JavaScript: I primarily use it for front-end development though I have dabbled with it in Express for back-end.",
+			tooltip: "JavaScript",
 		},
 		{
 			key: 1,
 			name: "TS",
-			tooltip:
-				"TypeScript: I use TypeScript for front-end development, in fact, this website uses Typescript.",
+			tooltip: "TypeScript",
 		},
 		{
 			key: 2,
 			name: "Py",
-			tooltip:
-				"Python: Python was my first programming language and it is definitely the one I am most confident in; though, nowadays I mainly use it for small scripts.",
+			tooltip: "Python",
 		},
 		{
 			key: 3,
 			name: "HTML",
-			tooltip:
-				"HTML: HTML is the foundation of most websites and as a result I've become very familiar with it.",
+			tooltip: "HTML",
 		},
 		{
 			key: 4,
 			name: "CSS",
-			tooltip:
-				"CSS: CSS is the foundation of the visuals of most websites and as a result I've become very familiar with it.",
+			tooltip: "CSS",
 		},
 		{
 			key: 5,
 			name: "SQL",
-			tooltip:
-				"SQL: I learned SQL recently to interact with my databases and I haven't looked back since.",
+			tooltip: "SQL",
 		},
 		{
 			key: 6,
 			name: "NxtJS",
-			tooltip:
-				"Next.js: I use Next.js for front-end development, in fact, this website uses Next.js.",
+			tooltip: "Next.js",
 		},
 		{
 			key: 7,
 			name: "React",
-			tooltip:
-				"React: I also use React for front-end development, though usually I use it for smaller projects.",
+			tooltip: "React.js",
 		},
 		{
 			key: 8,
 			name: "Chakra",
-			tooltip:
-				"Chakra UI: I use Chakra UI for styling my webpages, in fact, this website uses Chakra UI.",
+			tooltip: "Chakra UI",
 		},
 		{
 			key: 9,
 			name: "Git",
-			tooltip:
-				"Git: Git is my go to version control system and I use it for almost every project I make alongside GitHub.",
+			tooltip: "Git & GitHub",
 		},
 	];
 
@@ -163,15 +168,26 @@ export default function Skills(): JSX.Element {
 						spacing={{ base: 5, lg: 10 }}
 						align="center"
 					>
-						<SimpleGrid columns={5} spacing={10}>
-							{skills.map((skill) => (
-								<SkillItem
-									key={skill.name}
-									title={skill.name}
-									tooltip={skill.tooltip}
-								/>
-							))}
-						</SimpleGrid>
+						<motion.div
+							initial="offscreen"
+							whileInView="onscreen"
+							viewport={{ amount: 0.1 }}
+							variants={circleVariants}
+							style={{ width: "100%" }}
+						>
+							<SimpleGrid
+								columns={{ base: 3, lg: 5 }}
+								spacing={10}
+							>
+								{skills.map((skill) => (
+									<SkillItem
+										key={skill.name}
+										title={skill.name}
+										tooltip={skill.tooltip}
+									/>
+								))}
+							</SimpleGrid>
+						</motion.div>
 					</Stack>
 				</VStack>
 			</ContainerInside>

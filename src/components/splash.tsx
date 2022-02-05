@@ -19,12 +19,12 @@ export default function Splash() {
 					rotate: [0, 0, 270, 270, 0],
 				}}
 				transition={{
-					duration: 2,
+					duration: 1.5,
 					ease: "easeInOut",
 					times: [0, 0.2, 0.5, 0.8, 1],
 					repeat: Infinity,
 					repeatType: "loop",
-					repeatDelay: 1,
+					repeatDelay: 0.1,
 				}}
 				style={{
 					padding: "2",

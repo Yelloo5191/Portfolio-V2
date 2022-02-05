@@ -1,10 +1,18 @@
-import { Heading, Text, Stack } from "@chakra-ui/react";
-import { useControllableState } from "@chakra-ui/react";
-import { useEffect } from "react";
+import {
+	Heading,
+	Text,
+	Stack,
+	// VStack,
+	// Wrap,
+	// WrapItem,
+	Image,
+	SimpleGrid,
+} from "@chakra-ui/react";
+// import { useControllableState } from "@chakra-ui/react";
+// import { useEffect } from "react";
 import Container from "./container";
 import ContainerInside from "./containerInside";
 import { motion } from "framer-motion";
-import { Slide } from "./slidingPanel";
 
 export default function Projects(): JSX.Element {
 	const projects = [
@@ -40,57 +48,101 @@ export default function Projects(): JSX.Element {
 			github: "https://github.com/HazimAr/School-Simplified",
 			link: "https://github.com/Yelloo5191/Learner-Projects",
 		},
+		{},
+		{
+			title: "Programming Simplified",
+			role: "Frontend Developer",
+			image: "projects/programming.png",
+			desc: "Programming Simplified is a program meant to help beginner programmers learn the necessary basic skills to start their own careers and projects.",
+			github: "",
+			link: "https://programmingsimplified.org/",
+		},
+		{
+			title: "Ares",
+			role: "Solo Developer",
+			image: "projects/ares.png",
+			desc: "Ares is a War-Based Economy Discord Bot.",
+			github: "https://github.com/HazimAr/School-Simplified",
+			link: "https://github.com/Yelloo5191/Ares-Bot",
+		},
+		{
+			title: "Learner Projects",
+			role: "Solo Developer",
+			desc: "Various Mini-Python Projects",
+			image: "projects/learner.png",
+			github: "https://github.com/HazimAr/School-Simplified",
+			link: "https://github.com/Yelloo5191/Learner-Projects",
+		},
+		{
+			title: "Learner Projects",
+			role: "Solo Developer",
+			desc: "Various Mini-Python Projects",
+			image: "projects/learner.png",
+			github: "https://github.com/HazimAr/School-Simplified",
+			link: "https://github.com/Yelloo5191/Learner-Projects",
+		},
 	];
 
-	const [selected, setSelected] = useControllableState({ defaultValue: 0 });
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setSelected(
-				selected + 1 >= Object.keys(projects).length ? 0 : selected + 1
-			);
-		}, 5000);
-		return () => {
-			clearInterval(interval);
-		};
-	}, [selected]);
-
-	const fadeUpVariants = {
-		offscreen: {
-			opacity: 0,
-			y: 50,
-		},
-		onscreen: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				duration: 1,
-				delay: 0.3,
-			},
-		},
-	};
-
 	return (
-		<Container id="projects">
+		<Container minH="100vh" id="projects">
 			<ContainerInside>
-				<motion.div
-					initial="offscreen"
-					whileInView="onscreen"
-					viewport={{ amount: 0.1, once: true }}
-					variants={fadeUpVariants}
+				<Stack
+					direction={{ base: "column", lg: "row" }}
+					id="aboutme"
+					spacing={{ base: 5, lg: 10 }}
+					align="center"
 				>
-					<Stack my="10em" minH="100vh">
-						<Heading textAlign="center">Projects</Heading>
-						<Text textAlign="center" color="brand.light">
-							Here are some projects I've worked on...
-						</Text>
-						<Slide
-							infos={projects}
-							selected={selected}
-							setSelected={setSelected}
-						/>
-					</Stack>
-				</motion.div>
+					<SimpleGrid
+						columns={{ base: 1, lg: 3 }}
+						spacing={{ base: 5, lg: 10 }}
+						justify="center"
+						align="center"
+						w="100%"
+					>
+						{projects.map((project, index) => {
+							return index != 4 ? (
+								<motion.div
+									key={index}
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ duration: 0.5 }}
+								>
+									<Image
+										src={project.image}
+										alt={project.title}
+										width="400px"
+										filter="grayscale(0%)"
+										borderRadius="5px"
+										boxShadow="0px 0px 10px rgba(0,0,0,0.5)"
+										transition="all 0.2s ease-in-out"
+										_hover={{
+											filter: "grayscale(100%) invert(25%)",
+											zIndex: 1,
+											borderRadius: "0",
+											transform: "scale(1.1)",
+										}}
+									/>
+								</motion.div>
+							) : (
+								<motion.div
+									key={index}
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									transition={{ duration: 0.5 }}
+								>
+									<Heading>My Projects</Heading>
+									<Text>
+										I've also worked on a lot of various
+										projects, some I worked on with a team,
+										and others I did on my own. Regardless,
+										I find project creation fun and
+										rewarding.
+									</Text>
+								</motion.div>
+							);
+						})}
+					</SimpleGrid>
+				</Stack>
 			</ContainerInside>
 		</Container>
 	);

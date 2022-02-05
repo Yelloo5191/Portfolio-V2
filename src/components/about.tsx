@@ -37,11 +37,10 @@ export default function About(): JSX.Element {
 	};
 
 	return (
-		<Container minH="100vh">
+		<Container id="aboutme" minH="100vh">
 			<ContainerInside>
 				<Stack
 					direction={{ base: "column", lg: "row" }}
-					id="aboutme"
 					my="10em"
 					spacing={{ base: 5, lg: 20 }}
 					align="center"
