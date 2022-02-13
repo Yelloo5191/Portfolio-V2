@@ -84,7 +84,11 @@ export default function Projects(): JSX.Element {
 	];
 
 	return (
-		<Container minH="100vh" id="projects">
+		<Container
+			minH="100vh"
+			id="projects"
+			display={{ base: "none", lg: "flex" }}
+		>
 			<ContainerInside>
 				<Stack
 					direction={{ base: "column", lg: "row" }}
@@ -111,12 +115,13 @@ export default function Projects(): JSX.Element {
 										src={project.image}
 										alt={project.title}
 										width="400px"
-										filter="grayscale(0%)"
 										borderRadius="5px"
 										boxShadow="0px 0px 10px rgba(0,0,0,0.5)"
 										transition="all 0.2s ease-in-out"
+										filter="grayscale(100%) invert(25%)"
+										cursor="pointer"
 										_hover={{
-											filter: "grayscale(100%) invert(25%)",
+											filter: "grayscale(0%) invert(0%)",
 											zIndex: 1,
 											borderRadius: "0",
 											transform: "scale(1.1)",

@@ -129,11 +129,11 @@ export default function Skills(): JSX.Element {
 			position="relative"
 		>
 			<ContainerInside>
-				<VStack>
+				<VStack align={{ base: "start", lg: "center" }}>
 					<Stack
 						direction={{ base: "column", lg: "row" }}
 						id="aboutme"
-						my="10em"
+						my={{ base: "5em", lg: "10em" }}
 						spacing={{ base: 5, lg: 20 }}
 						align="center"
 					>
@@ -176,7 +176,7 @@ export default function Skills(): JSX.Element {
 							style={{ width: "100%" }}
 						>
 							<SimpleGrid
-								columns={{ base: 3, lg: 5 }}
+								columns={{ base: 4, sm: 7, lg: 5 }}
 								spacing={10}
 							>
 								{skills.map((skill) => (
@@ -201,14 +201,14 @@ function SkillItem({ title, tooltip }: { title: string; tooltip?: string }) {
 			<Circle
 				border="1px solid"
 				p={15}
-				w="75px"
-				h="75px"
+				w={{ base: "50px", lg: "75px" }}
+				h={{ base: "50px", lg: "75px" }}
 				cursor={`pointer`}
 				_hover={{
 					borderColor: "brand.primary",
 				}}
 			>
-				<Heading fontSize={20}>{title}</Heading>
+				<Heading fontSize={{ base: 15, lg: 20 }}>{title}</Heading>
 			</Circle>
 		</Tooltip>
 	);
