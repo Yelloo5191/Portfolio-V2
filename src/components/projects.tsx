@@ -13,6 +13,7 @@ import {
 import Container from "./container";
 import ContainerInside from "./containerInside";
 import { motion } from "framer-motion";
+import NextChakraLink from "./nextChakraLink";
 
 export default function Projects(): JSX.Element {
 	const projects = [
@@ -105,29 +106,30 @@ export default function Projects(): JSX.Element {
 					>
 						{projects.map((project, index) => {
 							return index != 4 ? (
-								<motion.div
-									key={index}
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									transition={{ duration: 0.5 }}
-								>
-									<Image
-										src={project.image}
-										alt={project.title}
-										width="400px"
-										borderRadius="5px"
-										boxShadow="0px 0px 10px rgba(0,0,0,0.5)"
-										transition="all 0.2s ease-in-out"
-										filter="grayscale(100%) invert(25%)"
-										cursor="pointer"
-										_hover={{
-											filter: "grayscale(0%) invert(0%)",
-											zIndex: 1,
-											borderRadius: "0",
-											transform: "scale(1.1)",
-										}}
-									/>
-								</motion.div>
+								<NextChakraLink key={index} href={project.link}>
+									<motion.div
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										transition={{ duration: 0.5 }}
+									>
+										<Image
+											src={project.image}
+											alt={project.title}
+											width="400px"
+											borderRadius="5px"
+											boxShadow="0px 0px 10px rgba(0,0,0,0.5)"
+											transition="all 0.2s ease-in-out"
+											filter="grayscale(100%) invert(25%)"
+											cursor="pointer"
+											_hover={{
+												filter: "grayscale(0%) invert(0%)",
+												zIndex: 1,
+												borderRadius: "0",
+												transform: "scale(1.1)",
+											}}
+										/>
+									</motion.div>
+								</NextChakraLink>
 							) : (
 								<motion.div
 									key={index}

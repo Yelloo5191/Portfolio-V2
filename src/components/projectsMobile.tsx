@@ -106,7 +106,7 @@ function Slide({ title, role, image, desc, github, link }): JSX.Element {
 		>
 			<ContainerBackground
 				minH="30vh"
-				zIndex="1"
+				zIndex="0"
 				display="block"
 				bgImg={image}
 				objectFit="cover"
