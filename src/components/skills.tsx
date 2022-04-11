@@ -197,10 +197,11 @@ export default function Skills(): JSX.Element {
 
 function SkillItem({ title, tooltip }: { title: string; tooltip?: string }) {
 	return (
-		<Tooltip label={tooltip}>
+		<Tooltip label={tooltip}>	
 			<Circle
 				border="1px solid"
 				p={15}
+				// @ts-ignore
 				w={{ base: "50px", lg: "75px" }}
 				h={{ base: "50px", lg: "75px" }}
 				cursor={`pointer`}

@@ -51,28 +51,28 @@ export default function Projects(): JSX.Element {
 		},
 		{},
 		{
-			title: "Programming Simplified",
-			role: "Frontend Developer",
-			image: "projects/programming.png",
-			desc: "Programming Simplified is a program meant to help beginner programmers learn the necessary basic skills to start their own careers and projects.",
-			github: "",
-			link: "https://programmingsimplified.org/",
+			title: "Infinite Monkey Simulation",
+			role: "Solo Developer",
+			image: "projects/monkeys.png",
+			desc: "An infinite amount of mokneys given infinite amount of time will eventually write Shakespeare.",
+			github: "https://github.com/Yelloo5191/Monkeys",
+			link: "",
 		},
 		{
-			title: "Ares",
+			title: "Auth System",
 			role: "Solo Developer",
-			image: "projects/ares.png",
-			desc: "Ares is a War-Based Economy Discord Bot.",
-			github: "https://github.com/HazimAr/School-Simplified",
-			link: "https://github.com/Yelloo5191/Ares-Bot",
+			image: "projects/auth.png",
+			desc: "Basic Auth System made with ExpressJS and PassportJS.",
+			github: "https://github.com/Yelloo5191/AuthSystem",
+			link: "",
 		},
 		{
-			title: "Learner Projects",
+			title: "Hermes Ticket Bot",
 			role: "Solo Developer",
-			desc: "Various Mini-Python Projects",
-			image: "projects/learner.png",
-			github: "https://github.com/HazimAr/School-Simplified",
-			link: "https://github.com/Yelloo5191/Learner-Projects",
+			desc: "Simple Ticket Bot made with Discord.py.",
+			image: "projects/hermes.png",
+			github: "https://github.com/Yelloo5191/Hermes-Ticket-Bot",
+			link: "",
 		},
 		{
 			title: "Learner Projects",
@@ -100,13 +100,11 @@ export default function Projects(): JSX.Element {
 					<SimpleGrid
 						columns={{ base: 1, lg: 3 }}
 						spacing={{ base: 5, lg: 10 }}
-						justify="center"
-						align="center"
 						w="100%"
 					>
 						{projects.map((project, index) => {
 							return index != 4 ? (
-								<NextChakraLink key={index} href={project.link}>
+								<NextChakraLink target="_blank" key={index} href={project.link != "" ? project.link : project.github}>
 									<motion.div
 										initial={{ opacity: 0 }}
 										animate={{ opacity: 1 }}
@@ -116,6 +114,7 @@ export default function Projects(): JSX.Element {
 											src={project.image}
 											alt={project.title}
 											width="400px"
+											height="200px"
 											borderRadius="5px"
 											boxShadow="0px 0px 10px rgba(0,0,0,0.5)"
 											transition="all 0.2s ease-in-out"
@@ -137,8 +136,8 @@ export default function Projects(): JSX.Element {
 									animate={{ opacity: 1 }}
 									transition={{ duration: 0.5 }}
 								>
-									<Heading>My Projects</Heading>
-									<Text>
+									<Heading textAlign={"center"}>My Projects</Heading>
+									<Text textAlign={"center"}>
 										I've also worked on a lot of various
 										projects, some I worked on with a team,
 										and others I did on my own. Regardless,

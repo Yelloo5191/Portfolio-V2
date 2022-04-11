@@ -74,7 +74,7 @@ export default function Contact(): JSX.Element {
 							>
 								<Heading textAlign="center">Contact Me</Heading>
 								<Text color="brand.light">
-									Have a request, offer, or complain? Contact
+									Have a request, offer, or complaint? Contact
 									me directly through the site!
 								</Text>
 							</Box>
