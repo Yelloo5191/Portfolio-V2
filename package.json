@@ -40,7 +40,7 @@
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.15.0",
-        "@types/babel__core": "^7.1.16",
+        "@types/babel__core": "^7.1.19",
         "@types/node": "^16.11.4",
         "@types/react": "^17.0.37",
         "eslint": "^8.1.0",
