@@ -69,12 +69,12 @@ export default function ProjectsMobile(): JSX.Element {
 			link: "https://github.com/Yelloo5191/Learner-Projects",
 		},
 		{
-			title: "Learner Projects",
+			title: "Ghastly Dungeons",
 			role: "Solo Developer",
-			desc: "Various Mini-Python Projects",
-			image: "projects/learner.png",
-			github: "https://github.com/HazimAr/School-Simplified",
-			link: "https://github.com/Yelloo5191/Learner-Projects",
+			desc: "Mini Game Jam game made with C# in Unity in less than a week.",
+			image: "projects/dungeons.png",
+			github: "https://github.com/Yelloo5191/Ghastly-Dungeons",
+			link: "https://yelloo.itch.io/ghastly-dungeons",
 		},
 	];
 

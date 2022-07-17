@@ -7,6 +7,7 @@ import {
 	// WrapItem,
 	Image,
 	SimpleGrid,
+	Box,
 } from "@chakra-ui/react";
 // import { useControllableState } from "@chakra-ui/react";
 // import { useEffect } from "react";
@@ -14,6 +15,7 @@ import Container from "./container";
 import ContainerInside from "./containerInside";
 import { motion } from "framer-motion";
 import NextChakraLink from "./nextChakraLink";
+import { useState } from "react";
 
 export default function Projects(): JSX.Element {
 	const projects = [
@@ -75,12 +77,12 @@ export default function Projects(): JSX.Element {
 			link: "",
 		},
 		{
-			title: "Learner Projects",
+			title: "Ghastly Dungeons",
 			role: "Solo Developer",
-			desc: "Various Mini-Python Projects",
-			image: "projects/learner.png",
-			github: "https://github.com/HazimAr/School-Simplified",
-			link: "https://github.com/Yelloo5191/Learner-Projects",
+			desc: "Mini Game Jam game made with C# in Unity in less than a week.",
+			image: "projects/dungeons.png",
+			github: "https://github.com/Yelloo5191/Ghastly-Dungeons",
+			link: "https://yelloo.itch.io/ghastly-dungeons",
 		},
 	];
 
@@ -104,31 +106,15 @@ export default function Projects(): JSX.Element {
 					>
 						{projects.map((project, index) => {
 							return index != 4 ? (
-								<NextChakraLink target="_blank" key={index} href={project.link != "" ? project.link : project.github}>
-									<motion.div
-										initial={{ opacity: 0 }}
-										animate={{ opacity: 1 }}
-										transition={{ duration: 0.5 }}
-									>
-										<Image
-											src={project.image}
-											alt={project.title}
-											width="400px"
-											height="200px"
-											borderRadius="5px"
-											boxShadow="0px 0px 10px rgba(0,0,0,0.5)"
-											transition="all 0.2s ease-in-out"
-											filter="grayscale(100%) invert(25%)"
-											cursor="pointer"
-											_hover={{
-												filter: "grayscale(0%) invert(0%)",
-												zIndex: 1,
-												borderRadius: "0",
-												transform: "scale(1.1)",
-											}}
-										/>
-									</motion.div>
-								</NextChakraLink>
+								<Project
+									key={index}
+									title={project.title}
+									role={project.role}
+									desc={project.desc}
+									image={project.image}
+									github={project.github}
+									link={project.link}
+								/>
 							) : (
 								<motion.div
 									key={index}
@@ -136,7 +122,9 @@ export default function Projects(): JSX.Element {
 									animate={{ opacity: 1 }}
 									transition={{ duration: 0.5 }}
 								>
-									<Heading textAlign={"center"}>My Projects</Heading>
+									<Heading textAlign={"center"}>
+										My Projects
+									</Heading>
 									<Text textAlign={"center"}>
 										I've also worked on a lot of various
 										projects, some I worked on with a team,
@@ -151,5 +139,90 @@ export default function Projects(): JSX.Element {
 				</Stack>
 			</ContainerInside>
 		</Container>
+	);
+}
+
+function Project({ title, role, desc, image, github, link }): JSX.Element {
+	const [isHover, setIsHover] = useState(false);
+
+	const handleMouseOver = () => {
+		setIsHover(true);
+	};
+
+	const handleMouseOut = () => {
+		setIsHover(false);
+	};
+
+	return (
+		<NextChakraLink target="_blank" href={link != "" ? link : github}>
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 0.5 }}
+			>
+				<Box
+					position="relative"
+					onMouseOver={handleMouseOver}
+					onMouseLeave={handleMouseOut}
+					textAlign={"center"}
+				>
+					<Image
+						src={image}
+						alt={title}
+						objectFit="cover"
+						width="400px"
+						height="200px"
+						borderRadius="5px"
+						boxShadow="0px 0px 10px rgba(0,0,0,0.5)"
+						transition="all 0.2s ease-in-out"
+						filter="grayscale(0%) invert(0%)"
+						cursor="pointer"
+						{...(isHover && {
+							filter: "grayscale(100%) brightness(0.25)",
+							zIndex: 1,
+							borderRadius: "0",
+							transform: "scale(1.1)",
+						})}
+					/>
+					{isHover && (
+						<>
+							<Heading
+								fontSize={["1rem", "1.25rem", "1.5rem"]}
+								position="absolute"
+								top="0%"
+								left="50%"
+								transform="translate(-50%, -50%)"
+								width="380px"
+								zIndex={2}
+							>
+								{title}
+							</Heading>
+							<Text
+								fontSize={["1rem", "1.25rem", "1.5rem"]}
+								position="absolute"
+								top="15%"
+								left="50%"
+								transform="translate(-50%, -50%)"
+								width="380px"
+								zIndex={2}
+							>
+								{role}
+							</Text>
+							<Text
+								fontSize={[".5rem", ".75rem", "1rem"]}
+								position="absolute"
+								top="50%"
+								left="50%"
+								transform="translate(-50%, -50%)"
+								width="380px"
+								zIndex={2}
+							>
+								{desc}
+							</Text>
+						</>
+					)}
+				</Box>
+			</motion.div>
+		</NextChakraLink>
 	);
 }
