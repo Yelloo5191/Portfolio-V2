@@ -178,7 +178,7 @@ function Project({ title, role, desc, image, github, link }): JSX.Element {
 						filter="grayscale(0%) invert(0%)"
 						cursor="pointer"
 						{...(isHover && {
-							filter: "grayscale(100%) brightness(0.25)",
+							filter: "grayscale(100%) invert(25%) brightness(.25)",
 							zIndex: 1,
 							borderRadius: "0",
 							transform: "scale(1.1)",
