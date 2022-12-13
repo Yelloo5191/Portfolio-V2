@@ -64,9 +64,9 @@ export default function About(): JSX.Element {
 						<Text w="100%">
 							My name is Hovhannes Muradyan and I am an aspiring
 							Software Engineer looking to learn and grow. I am
-							currently a 17 year old High School student and all
-							of my knowledge with programming has been
-							self-taught.
+							currently an 18 year old College student studying Computer Science
+							at the University of California, Santa Cruz. I am passionate about
+							technology and I am always looking to learn new things.
 						</Text>
 					</motion.div>
 				</Stack>
