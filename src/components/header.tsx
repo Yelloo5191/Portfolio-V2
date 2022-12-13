@@ -56,11 +56,11 @@ export default function Main(): JSX.Element {
 						url="https://www.instagram.com/hmuradyan5191/"
 						bgColor="var(--chakra-colors-brand-primary)"
 					/>
-					<SocialIcon
+					{/* <SocialIcon
 						target="_blank"
 						url="https://twitter.com/hm156_"
 						bgColor="var(--chakra-colors-brand-primary)"
-					/>
+					/> */}
 				</VStack>
 			</Stack>
 			<Button
