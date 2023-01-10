@@ -18,6 +18,16 @@ import NextChakraLink from "./nextChakraLink";
 import { useState } from "react";
 
 export default function Projects(): JSX.Element {
+
+	const projectVariants = {
+		offscreen: {
+			opacity: 0
+		},
+		onscreen: {
+			opacity: 1,
+		}
+	};
+
 	const projects = [
 		{
 			title: "School Simplified",
@@ -106,21 +116,30 @@ export default function Projects(): JSX.Element {
 					>
 						{projects.map((project, index) => {
 							return index != 4 ? (
-								<Project
-									key={index}
-									title={project.title}
-									role={project.role}
-									desc={project.desc}
-									image={project.image}
-									github={project.github}
-									link={project.link}
-								/>
+								<motion.div
+									initial="offscreen"
+									whileInView="onscreen"
+									viewport={{ amount: 0.1 }}
+									variants={projectVariants}
+									transition={{ duration: 0.5, delay: 0.2 * index }}
+								>
+									<Project
+										key={index}
+										title={project.title}
+										role={project.role}
+										desc={project.desc}
+										image={project.image}
+										github={project.github}
+										link={project.link}
+									/>
+								</motion.div>
 							) : (
 								<motion.div
-									key={index}
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									transition={{ duration: 0.5 }}
+									initial="offscreen"
+									whileInView="onscreen"
+									viewport={{ amount: 0.1 }}
+									variants={projectVariants}
+									transition={{ duration: 0.5, delay: 0.2 * index }}
 								>
 									<Heading textAlign={"center"}>
 										My Projects
@@ -164,19 +183,19 @@ function Project({ title, role, desc, image, github, link }): JSX.Element {
 					position="relative"
 					onMouseOver={handleMouseOver}
 					onMouseLeave={handleMouseOut}
-					textAlign={"center"}
 				>
 					<Image
 						src={image}
 						alt={title}
 						objectFit="cover"
-						width="400px"
-						height="200px"
+						width="20rem"
+						height="10em"
 						borderRadius="5px"
 						boxShadow="0px 0px 10px rgba(0,0,0,0.5)"
 						transition="all 0.2s ease-in-out"
 						filter="grayscale(0%) invert(0%)"
 						cursor="pointer"
+						overflow="hidden"
 						{...(isHover && {
 							filter: "grayscale(100%) invert(25%) brightness(.25)",
 							zIndex: 1,
@@ -185,41 +204,41 @@ function Project({ title, role, desc, image, github, link }): JSX.Element {
 						})}
 					/>
 					{isHover && (
-						<>
+						<Box>
 							<Heading
-								fontSize={["1rem", "1.25rem", "1.5rem"]}
+								fontSize={[".75rem", "1rem", "1.rem"]}
 								position="absolute"
 								top="0%"
 								left="50%"
 								transform="translate(-50%, -50%)"
-								width="380px"
+								width="20rem"
 								zIndex={2}
 							>
 								{title}
 							</Heading>
 							<Text
-								fontSize={["1rem", "1.25rem", "1.5rem"]}
+								fontSize={[".75rem", "1rem", "1.25rem"]}
 								position="absolute"
 								top="15%"
 								left="50%"
 								transform="translate(-50%, -50%)"
-								width="380px"
+								width="20rem"
 								zIndex={2}
 							>
 								{role}
 							</Text>
 							<Text
-								fontSize={[".5rem", ".75rem", "1rem"]}
+								fontSize={[".25rem", ".5rem", ".75rem"]}
 								position="absolute"
 								top="50%"
 								left="50%"
 								transform="translate(-50%, -50%)"
-								width="380px"
+								width="20rem"
 								zIndex={2}
 							>
 								{desc}
 							</Text>
-						</>
+						</Box>
 					)}
 				</Box>
 			</motion.div>
