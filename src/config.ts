@@ -12,12 +12,19 @@ type MetaType = {
 };
 
 const META: MetaType = {
-	title: "Portfolio v2.0 | Yelloo",
+	title: "Portfolio v3.0 | Hovhannes M",
 	lang: "en-us",
 	description: "A website built to showcase my skills and abilities",
 	url: "/",
 	image: "/logo.png",
-	tags: ["nextjs", "typescript", "chakraui", "portfolio", "yelloo"],
+	tags: [
+		"nextjs",
+		"typescript",
+		"chakraui",
+		"portfolio",
+		"hovhannes",
+		"muradyan",
+	],
 };
 
 export { GA_TRACKING_ID, IS_PRODUCTION, META };

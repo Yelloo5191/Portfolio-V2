@@ -29,11 +29,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 				<link rel="icon" href="/images/favicon.ico" />
 			</Head>
 			<ChakraProvider theme={theme}>
-				<Header />
-
 				<Component {...pageProps} />
-
-				<Footer />
 			</ChakraProvider>
 		</>
 	);

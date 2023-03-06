@@ -1,7 +1,6 @@
-import ContainerBackground from "./containerBackground";
 import { VStack, HStack, Heading, Link, Box } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 import Button from "./button";
+import Container from "./container";
 
 export default function Intro(): JSX.Element {
 	const upVariant = {
@@ -16,54 +15,46 @@ export default function Intro(): JSX.Element {
 	};
 
 	return (
-		<ContainerBackground
-			minH="100vh"
-			src="https://c.tenor.com/2gfRHLv6GZ8AAAAd/code-coding.gif"
+		<Container
+			width="90vw"
+			height="80vh"
+			margin="0"
+			border="1px solid"
+			position="absolute"
+			top="50%"
+			left="50%"
+			transform="translate(-50%, -50%)"
+			justify="space-between"
+			padding={15}
 		>
-			<ContainerBackground minH="100vh" src="images/skills_bg.jpg">
-				<VStack height="100%" width="100%">
-					<HStack>
-						<Box
-							width="100%"
-							height="100vh"
-							display="flex"
-							alignItems="center"
-							overflow="hidden"
-						>
-							<VStack>
-								<motion.div
-									initial="hidden"
-									whileInView="visible"
-									variants={upVariant}
-									transition={{
-										type: "spring",
-										duration: 2,
-										delay: 0.3,
-									}}
-								>
-									<Heading>
-										Hi, I'm Hovhannes. I like to create.
-									</Heading>
-								</motion.div>
-								<motion.div
-									initial="hidden"
-									whileInView="visible"
-									variants={upVariant}
-									transition={{
-										type: "spring",
-										duration: 2,
-										delay: 0.6,
-									}}
-								>
-									<Link href="#aboutme">
-										<Button> Come again? </Button>
-									</Link>
-								</motion.div>
-							</VStack>
-						</Box>
-					</HStack>
-				</VStack>
-			</ContainerBackground>
-		</ContainerBackground>
+			<VStack
+				w="100%"
+				height="100%"
+				align="start"
+				justify="space-between"
+			>
+				<Box>
+					<Heading fontSize={40}>Greetings, I am Hovhannes.</Heading>
+					<Heading fontSize={24}>I like to create.</Heading>
+				</Box>
+				<Box>
+					<VStack>
+						<Button width={200} height={50} textAlign="left">
+							Info
+						</Button>
+						<Button width={200} height={50} textAlign="left">
+							Projects
+						</Button>
+						<Button width={200} height={50} textAlign="left">
+							Contact
+						</Button>
+					</VStack>
+				</Box>
+				<Box></Box>
+			</VStack>
+			<VStack w="100%" height="100%" align="end">
+				{/* <Heading>Greetings, I am Hovhannes. I like to create.</Heading> */}
+			</VStack>
+		</Container>
 	);
 }
