@@ -2,6 +2,9 @@ import { VStack, HStack, Heading, Link, Box } from "@chakra-ui/react";
 import Button from "./button";
 import Container from "./container";
 
+import ThreeCanvas from "./canvas";
+import { useState } from "react";
+
 export default function Intro(): JSX.Element {
 	const upVariant = {
 		hidden: {
@@ -13,6 +16,8 @@ export default function Intro(): JSX.Element {
 			x: 0,
 		},
 	};
+
+	const [ sphereState, setSphereState ] = useState("idle");
 
 	return (
 		<Container
@@ -39,21 +44,21 @@ export default function Intro(): JSX.Element {
 				</Box>
 				<Box>
 					<VStack>
-						<Button width={200} height={50} textAlign="left">
+						<Button width={200} height={50} textAlign="left" onClick={ () =>  { setSphereState("info") } }>
 							Info
 						</Button>
-						<Button width={200} height={50} textAlign="left">
+						<Button width={200} height={50} textAlign="left" onClick={ () =>  { setSphereState("projects") } }>
 							Projects
 						</Button>
-						<Button width={200} height={50} textAlign="left">
+						<Button width={200} height={50} textAlign="left" onClick={ () =>  { setSphereState("contact") } }>
 							Contact
 						</Button>
 					</VStack>
 				</Box>
 				<Box></Box>
 			</VStack>
-			<VStack w="100%" height="100%" align="end">
-				{/* <Heading>Greetings, I am Hovhannes. I like to create.</Heading> */}
+			<VStack w="100%" height="100%" justify="center" align="end">
+				<ThreeCanvas sphereState={sphereState} />
 			</VStack>
 		</Container>
 	);
