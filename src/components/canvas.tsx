@@ -3,60 +3,50 @@ import { Box } from "@chakra-ui/react";
 import * as THREE from "three";
 
 const ThreeCanvas = ({ sphereState }) => {
-  const containerRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+	const containerRef = useRef<HTMLInputElement | null>();
+	let scene, camera, renderer, geometry, material, sphere;
 
-  useEffect(() => {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+	useEffect(() => {
+		const initThreeJS = () => {
+			scene = new THREE.Scene();
+			camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(500, 500);
-    containerRef.current.appendChild(renderer.domElement);
+			renderer = new THREE.WebGLRenderer({ alpha: true });
+			renderer.setSize(500, 500);
 
-    const geometry = new THREE.SphereGeometry(30, 15, 15);
-    const material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true });
-    const sphere = new THREE.Mesh(geometry, material);
+			containerRef.current.appendChild(renderer.domElement);
 
-    scene.add(sphere);
+			geometry = new THREE.SphereGeometry(30, 15, 15);
+			material = new THREE.MeshBasicMaterial({
+				color: 0xffffff,
+				wireframe: true,
+			});
+			sphere = new THREE.Mesh(geometry, material);
 
-    camera.position.z = 60;
+			scene.add(sphere);
 
-    return () => {
-      renderer.dispose();
-      material.dispose();
-      geometry.dispose();
-    };
-  }, [sphereState]);
+			camera.position.z = 60;
+		};
 
-  useEffect(() => {
-    if (!containerRef.current) return;
+		const animate = () => {
+			requestAnimationFrame(animate);
+			sphere.rotation.x += 0.01;
+			sphere.rotation.y += 0.005;
 
+			renderer.render(scene, camera);
+		};
 
-    const animate = () => {
-      requestAnimationFrame(animate);
+		initThreeJS();
+		animate();
 
-      if (sphereState === "info") {
-        sphere.rotation.x += 0.01;
-        sphere.rotation.y += 0.01;
-      } else if (sphereState === "projects") {
-        sphere.rotation.x += 0.01;
-        sphere.rotation.y += 0.01;
-      } else if (sphereState === "contact") {
-        sphere.rotation.x += 0.01;
-        sphere.rotation.y += 0.01;
-      } else {
-        sphere.rotation.x += 0.01;
-        sphere.rotation.y += 0.005;
-      }
+		return () => {
+			renderer.dispose();
+			geometry.dispose();
+			material.dispose();
+		};
+	});
 
-
-      renderer.render(scene, camera);
-    };
-
-    animate();
-  }, [sphereState]);
-
-  return <Box ref={containerRef} />;
+	return <Box ref={containerRef} />;
 };
 
 export default ThreeCanvas;

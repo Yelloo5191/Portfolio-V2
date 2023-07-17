@@ -17,7 +17,7 @@ export default function Intro(): JSX.Element {
 		},
 	};
 
-	const [ sphereState, setSphereState ] = useState("idle");
+	const [sphereState, setSphereState] = useState("idle");
 
 	return (
 		<Container
@@ -44,13 +44,37 @@ export default function Intro(): JSX.Element {
 				</Box>
 				<Box>
 					<VStack>
-						<Button width={200} height={50} textAlign="left" onClick={ () =>  { setSphereState("info") } }>
+						<Button
+							width={200}
+							height={50}
+							textAlign="left"
+							onClick={(event) => {
+								event.stopPropagation();
+								setSphereState("info");
+							}}
+						>
 							Info
 						</Button>
-						<Button width={200} height={50} textAlign="left" onClick={ () =>  { setSphereState("projects") } }>
+						<Button
+							width={200}
+							height={50}
+							textAlign="left"
+							onClick={(event) => {
+								event.stopPropagation();
+								setSphereState("projects");
+							}}
+						>
 							Projects
 						</Button>
-						<Button width={200} height={50} textAlign="left" onClick={ () =>  { setSphereState("contact") } }>
+						<Button
+							width={200}
+							height={50}
+							textAlign="left"
+							onClick={(event) => {
+								event.stopPropagation();
+								setSphereState("contact");
+							}}
+						>
 							Contact
 						</Button>
 					</VStack>
@@ -58,7 +82,7 @@ export default function Intro(): JSX.Element {
 				<Box></Box>
 			</VStack>
 			<VStack w="100%" height="100%" justify="center" align="end">
-				<ThreeCanvas sphereState={sphereState} />
+				<ThreeCanvas key={sphereState} sphereState={sphereState} />
 			</VStack>
 		</Container>
 	);
