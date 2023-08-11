@@ -2,7 +2,7 @@ import { VStack, HStack, Heading, Link, Box } from "@chakra-ui/react";
 import Button from "./button";
 import Container from "./container";
 
-import ThreeCanvas from "./canvas";
+import MyCanvas from "./myCanvas";
 import { useState } from "react";
 
 export default function Intro(): JSX.Element {
@@ -17,7 +17,7 @@ export default function Intro(): JSX.Element {
 		},
 	};
 
-	const [sphereState, setSphereState] = useState("idle");
+	const [sphereState, setSphereState] = useState({"idle": true, "info": false, "projects": false, "contact": false, "paused": false});
 
 	return (
 		<Container
@@ -50,7 +50,7 @@ export default function Intro(): JSX.Element {
 							textAlign="left"
 							onClick={(event) => {
 								event.stopPropagation();
-								setSphereState("info");
+								setSphereState({"idle": false, "info": true, "projects": false, "contact": false, "paused": false});
 							}}
 						>
 							Info
@@ -61,7 +61,7 @@ export default function Intro(): JSX.Element {
 							textAlign="left"
 							onClick={(event) => {
 								event.stopPropagation();
-								setSphereState("projects");
+								setSphereState({"idle": false, "info": false, "projects": true, "contact": false, "paused": false});
 							}}
 						>
 							Projects
@@ -72,7 +72,7 @@ export default function Intro(): JSX.Element {
 							textAlign="left"
 							onClick={(event) => {
 								event.stopPropagation();
-								setSphereState("contact");
+								setSphereState({"idle": false, "info": false, "projects": false, "contact": true, "paused": false});
 							}}
 						>
 							Contact
@@ -82,7 +82,7 @@ export default function Intro(): JSX.Element {
 				<Box></Box>
 			</VStack>
 			<VStack w="100%" height="100%" justify="center" align="end">
-				<ThreeCanvas key={sphereState} sphereState={sphereState} />
+				<MyCanvas state={sphereState} setState={setSphereState} />
 			</VStack>
 		</Container>
 	);
