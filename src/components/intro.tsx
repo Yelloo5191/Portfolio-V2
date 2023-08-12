@@ -1,9 +1,11 @@
-import { VStack, HStack, Heading, Link, Box } from "@chakra-ui/react";
+import { VStack, HStack, Heading, Box } from "@chakra-ui/react";
 import Button from "./button";
 import Container from "./container";
 
-import MyCanvas from "./myCanvas";
+// import MyCanvas from "./myCanvas";
 import { useState } from "react";
+import Info from "./info";
+import Projects from "./projects";
 
 export default function Intro(): JSX.Element {
 	const upVariant = {
@@ -17,7 +19,13 @@ export default function Intro(): JSX.Element {
 		},
 	};
 
-	const [sphereState, setSphereState] = useState({"idle": true, "info": false, "projects": false, "contact": false, "paused": false});
+	const [sphereState, setSphereState] = useState({
+		idle: true,
+		info: false,
+		projects: false,
+		contact: false,
+		paused: false,
+	});
 
 	return (
 		<Container
@@ -38,10 +46,15 @@ export default function Intro(): JSX.Element {
 				align="start"
 				justify="space-between"
 			>
-				<Box>
-					<Heading fontSize={40}>Greetings, I am Hovhannes.</Heading>
-					<Heading fontSize={24}>I like to create.</Heading>
-				</Box>
+				<HStack>
+					{/* <MyCanvas /> */}
+					<Box>
+						<Heading fontSize={40}>
+							Greetings, I am Hovhannes.
+						</Heading>
+						<Heading fontSize={24}>I like to create.</Heading>
+					</Box>
+				</HStack>
 				<Box>
 					<VStack>
 						<Button
@@ -50,7 +63,13 @@ export default function Intro(): JSX.Element {
 							textAlign="left"
 							onClick={(event) => {
 								event.stopPropagation();
-								setSphereState({"idle": false, "info": true, "projects": false, "contact": false, "paused": false});
+								setSphereState({
+									idle: false,
+									info: true,
+									projects: false,
+									contact: false,
+									paused: false,
+								});
 							}}
 						>
 							Info
@@ -61,7 +80,13 @@ export default function Intro(): JSX.Element {
 							textAlign="left"
 							onClick={(event) => {
 								event.stopPropagation();
-								setSphereState({"idle": false, "info": false, "projects": true, "contact": false, "paused": false});
+								setSphereState({
+									idle: false,
+									info: false,
+									projects: true,
+									contact: false,
+									paused: false,
+								});
 							}}
 						>
 							Projects
@@ -72,7 +97,13 @@ export default function Intro(): JSX.Element {
 							textAlign="left"
 							onClick={(event) => {
 								event.stopPropagation();
-								setSphereState({"idle": false, "info": false, "projects": false, "contact": true, "paused": false});
+								setSphereState({
+									idle: false,
+									info: false,
+									projects: false,
+									contact: true,
+									paused: false,
+								});
 							}}
 						>
 							Contact
@@ -81,9 +112,8 @@ export default function Intro(): JSX.Element {
 				</Box>
 				<Box></Box>
 			</VStack>
-			<VStack w="100%" height="100%" justify="center" align="end">
-				<MyCanvas state={sphereState} setState={setSphereState} />
-			</VStack>
+			<Info display="none" />
+			<Projects />
 		</Container>
 	);
 }
